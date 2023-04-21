@@ -1,0 +1,400 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%; }
+
+body {
+    background: url("/app/trustpayments/file/background.svg");
+    background-size: cover; }
+
+.return-url {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px; }
+
+
+.return-url {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px; }
+
+#st-notification-frame {
+    padding-bottom: 20px; }
+
+.trustpayments-header {
+    background: #f7f7f7;
+    padding: 20px 30px; }
+@media (max-width: 425px) {
+    .trustpayments-header {
+        padding: 15px 0; } }
+
+@media (max-width: 425px) {
+    .logo {
+        width: 130px; } }
+
+.return-url a {
+    color: inherit;
+    text-decoration: underline; }
+
+.container.active {
+    background: #e9fff3; }
+
+
+iframe {
+    /* This fixes a mobile Safari bug */
+    height: 38px !important;
+}
+
+#payment-form {
+    width: 280px;
+    margin: 0 auto;
+    padding-bottom: 25px;
+}
+
+label {
+    display: block;
+    height: 10px;
+    color: #13395e;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 10px;
+    margin: 8px 0;
+}
+
+
+
+.date-and-code {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.date-and-code > div:nth-child(1) {
+    width: 55.715%;
+}
+.date-and-code > div:nth-child(2) {
+    width: 45.719%;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    height: 40px;
+}
+.icon-container:last-child {
+    right: 0;
+}
+.icon-container.payment-method {
+    right: 0;
+}
+
+.input-container.card-number {
+    margin-bottom: 8px;
+}
+.input-container.expiry-date {
+    margin-right: 8px;
+}
+
+.card-number-frame,
+.expiry-date-frame,
+.cvv-frame {
+    flex: 1 1 auto;
+    padding-left: 40px;
+}
+
+.icon-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 26px;
+    margin: 0 7px;
+}
+.icon-container img {
+    width: 20px;
+}
+
+.icon-container.payment-method {
+    transform: translateY(-50%) rotateY(90deg);
+    transition: opacity 0.15s ease-out;
+    opacity: 0;
+    top: 50%;
+}
+
+.icon-container.payment-method.show {
+    opacity: 1;
+    transition: all 0.4s ease-out;
+    transform: translateY(-50%) rotateY(0deg);
+}
+
+.icon-container.payment-method img {
+    width: 100%;
+}
+
+[id$="-error"] {
+    display: none;
+}
+
+.frame {
+    opacity: 0;
+}
+
+.frame--activated {
+    opacity: 1;
+    border: solid 1px #13395e;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px 0 rgba(19, 57, 94, 0.2);
+}
+
+.frame--activated.frame--focus {
+    border: solid 1px #13395e;
+    box-shadow: 0 2px 5px 0 rgba(19, 57, 94, 0.15);
+}
+
+.frame--activated.frame--invalid {
+    border: solid 1px #d96830;
+    box-shadow: 0 2px 5px 0 rgba(217, 104, 48, 0.15);
+}
+
+.error-message {
+    display: block;
+    color: #c9501c;
+    font-size: 0.9rem;
+    margin: 8px 0 0 1px;
+    font-weight: 300;
+}
+
+.new-card-wrapper {
+    margin-top: 20px;
+}
+
+.pay-button {
+    border: none;
+    border-radius: 3px;
+    margin-top: 25px;
+    color: #fff;
+    font-weight: 500;
+    height: 40px;
+    width: 100%;
+    background-color: #13395e;
+    box-shadow: 0 1px 3px 0 rgba(19, 57, 94, 0.4);
+}
+
+.pay-button:active {
+    background-color: #0b2a49;
+    box-shadow: 0 1px 3px 0 rgba(19, 57, 94, 0.4);
+}
+
+.pay-button:hover {
+    background-color: #15406b;
+    box-shadow: 0 2px 5px 0 rgba(19, 57, 94, 0.4);
+}
+
+.pay-button:disabled {
+    background-color: #697887;
+    box-shadow: none;
+}
+
+.pay-button:not(:disabled) {
+    cursor: pointer;
+}
+
+.success-payment-message {
+    color: #13395e;
+    line-height: 1.4;
+}
+.token {
+    color: #b35e14;
+    font-size: 0.9rem;
+    font-family: monospace;
+}
+
+/**
+IE11-targeted optimisations
+ */
+_:-ms-fullscreen,
+:root .icon-container {
+    display: block;
+}
+
+_:-ms-fullscreen,
+:root .icon-container img {
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    position: absolute;
+}
+
+_:-ms-fullscreen,
+#icon-card-number,
+_:-ms-fullscreen,
+#icon-expiry-date,
+_:-ms-fullscreen,
+#icon-cvv {
+    left: 7px;
+}
+
+.return-url {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px; }
+
+#st-notification-frame {
+    padding-bottom: 20px; }
+
+.trustpayments-header {
+    background: #f7f7f7;
+    padding: 20px 30px; }
+@media (max-width: 425px) {
+    .trustpayments-header {
+        padding: 15px 0; } }
+
+@media (max-width: 425px) {
+    .logo {
+        width: 130px; } }
+
+.return-url a {
+    color: inherit;
+    text-decoration: underline; }
+
+.container.active {
+    background: #e9fff3; }
+
+.trustpayments-form-wrapper {
+    background: white;
+    width: fit-content;
+    border-radius: 5px;
+    margin: auto;
+    margin-bottom: 50px; }
+@media (max-width: 375px) {
+    .trustpayments-form-wrapper .new-card-wrapper {
+        padding: 10px; } }
+.trustpayments-form-wrapper .trustpayments-button-wrapper button {
+    background: #40d586;
+    border: none;
+    color: white;
+    padding: 10px 0;
+    width: 190px;
+    border-radius: 5px;
+    cursor: pointer; }
+.trustpayments-form-wrapper .trustpayments-button-wrapper button .fa {
+    display: none; }
+.trustpayments-form-wrapper .trustpayments-button-wrapper button:disabled {
+    background: gray;
+    cursor: not-allowed; }
+.trustpayments-form-wrapper .trustpayments-button-wrapper button:disabled .fa {
+    display: inline-block; }
+@media (max-width: 375px) {
+    .trustpayments-form-wrapper .trustpayments-button-wrapper label {
+        margin-bottom: 0; } }
+.trustpayments-form-wrapper .trustpayments-button-wrapper span {
+    font-size: x-large; }
+
+.logo-payments {
+    height: 17px; }
+
+.logo-cards {
+    width: 110px;
+    margin-top: 5px; }
+
+#st-form .new-card-wrapper label {
+    margin-bottom: 60px;
+    cursor: pointer; }
+@media (max-width: 425px) {
+    #st-form .new-card-wrapper label {
+        margin-bottom: 10px; } }
+
+.previous-card-header {
+    padding: 20px 25px 15px;
+    color: #a1a1a1;
+    border-bottom: 1px solid #dedede; }
+@media (max-width: 768px) {
+    .previous-card-header {
+        padding: 15px; } }
+
+.previous-card-container .container {
+    border-bottom: 1px solid #dedede;
+    padding: 15px 25px;
+    font-size: 12px;
+    color: #5a5a5a;
+    cursor: pointer; }
+@media (max-width: 425px) {
+    .previous-card-container .container {
+        padding: 15px; } }
+
+.previous-card-container img {
+    width: 40px; }
+
+.new-card-container .container {
+    font-size: 15px; }
+
+@media (max-width: 425px) {
+    iframe[id^=st-] {
+        height: 90px !important; } }
+
+input[type="radio"] {
+    cursor: pointer; }
+
+.form-check-input[type=radio] {
+    border-radius: 50%; }
+.form-check-input[type=radio]:checked {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e %3ccircle r='2.5' fill='%230d6efd'/%3e %3c/svg%3e"); }
+
+.form-check .form-check-input {
+    float: left;
+    margin-left: -1.5em; }
+
+.form-check-input {
+    width: 14px;
+    height: 14px;
+    margin-top: 0.25em;
+    vertical-align: top;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 2px solid #9595a2;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    margin-left: 0 !important; }
+.form-check-input:checked {
+    border-color: #0d6efd; }
+
+#st-remembered {
+    display: none; }
+
+.error-string {
+    padding-top: 20px;
+    color: #ee0000;
+    text-align: center; }
+
+#trustpayments-loading {
+    text-align: center;
+    padding: 40px 0; }
+
+.extra-methods {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.extra-methods__applepay > * {
+    margin-top: 10px;
+    height: 40px;
+    width: 240px; }
+.extra-methods__googlepay > * {
+    margin-top: 10px; }
+.extra-methods__googlepay > * > button {
+    height: 40px;
+    width: 240px; }
