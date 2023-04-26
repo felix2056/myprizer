@@ -6914,7 +6914,7 @@
                                                                 <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
                                                                 <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                             </svg></svg-icon></button>
-                                                    <!----><button _ngcontent-fqv-c90="" class="ticket__add ng-star-inserted"> Install application </button>
+                                                    <!----><button _ngcontent-fqv-c90="" class="ticket__add ng-star-inserted" type="button"> Install application </button>
                                                     <!---->
                                                     <!---->
                                                     <!---->

@@ -21,10 +21,13 @@ Route::get('competition-winners/featured', 'AppController@winners')->name('app.w
 Route::get('draw-results', 'AppController@drawResults')->name('app.draw-results');
 Route::get('faq', 'AppController@faq')->name('app.faq');
 Route::get('cart', 'AppController@cart')->name('app.cart');
-Route::get('my-account', 'AppController@myAccount')->name('app.my-account');
-Route::get('checkout', 'AppController@checkout')->name('app.checkout');
-Route::get('checkout-2', 'AppController@checkout2')->name('app.checkout');
+Route::match(['get', 'post'], 'checkout', 'AppController@checkout')->name('app.checkout');
+Route::get('checkout-2', 'AppController@checkout2')->name('app.checkout-2');
 
+Route::prefix('my-account')->group(function () {
+    Route::get('', 'AppController@myAccount')->name('app.my-account');
+    Route::get('wc-smart-coupons', 'AppController@myAccount')->name('app.my-account.wc-smart-coupons');
+});
 
 Route::prefix('product')->group(function () {
     Route::get('instant-win-17', 'ProductController@product1')->name('product.1');

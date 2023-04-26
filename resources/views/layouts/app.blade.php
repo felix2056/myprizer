@@ -149,4 +149,30 @@
     </script>
 
 </body>
+
+@yield('scripts')
+
+<script>
+    // add click event to all buttons with class .ticket__add
+    document.querySelectorAll('.ticket__add').forEach(item => {
+        item.addEventListener('click', event => {
+            let product_title = document.querySelector('.product__title').innerHTML;
+            let product_price = document.querySelector('.product__price').innerHTML;
+            let product_image = document.querySelector('.product-gallery__img').src;
+
+            // add product to cart
+            let cart = {
+                product_title: product_title,
+                product_price: product_price,
+                product_image: product_image
+            };
+
+            // save cart to local storage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // redirect to checkout page
+            window.location.href = '/checkout';
+        })
+    });      
+</script>
 </html>

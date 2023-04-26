@@ -464,31 +464,7 @@
                 <apple-pay-button id="applepay-button" buttonstyle="black" type="pay" locale="en-GB" lang="en-GB" aria-hidden="true" style="display: none;"></apple-pay-button>
             </div>
             <div id="googlepay-container" class="extra-methods__googlepay">
-                <div><button type="button" aria-label="Buy with GPay" class=" gpay-card-info-container black buy long en">
-                        <div class="gpay-card-info-animation-container black gpay-card-info-animation-container-fade-out">
-                            <div class="gpay-card-info-placeholder-container">
-                                <div class="
-    gpay-card-info-animation-gpay-logo black
-    "></div><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" direction="ltr" height="36px" width="130px">
-                                    <style>
-                                        @import url(//fonts.googleapis.com/css?family=Google+Sans:500)
-
-                                    </style>
-                                    <line x1="2" y1="10.5" x2="2" y2="29.5" style="stroke: #5F6368; stroke-width:2"></line>
-                                    <image x="11" y="6" width="37.5" height="29" preserveAspectRatio="none" xlink:href="https://www.gstatic.com/images/icons/material/system/1x/payment_white_36dp.png"></image><text x="52" y="25.5" class="small" style="font: 15px 'Google Sans', sans-serif; fill: #FFFFFF">••••••</text>
-                                </svg>
-                            </div>
-                            <div class="gpay-card-info-animated-progress-bar-container">
-                                <div class="
-    gpay-card-info-animated-progress-bar
-    ">
-                                    <div class="
-    gpay-card-info-animated-progress-bar-indicator
-    "></div>
-                                </div>
-                            </div>
-                        </div><iframe class="gpay-card-info-iframe gpay-card-info-iframe-fade-in" scrolling="no" src="https://pay.google.com/gp/p/generate_gpay_btn_img?buttonColor=default&amp;browserLocale=en&amp;buttonSizeMode=static&amp;enableGpayNewButtonAsset=false"></iframe>
-                    </button></div>
+                
             </div>
         </div>
 
