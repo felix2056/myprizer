@@ -114,3 +114,5 @@ Route::prefix('product')->group(function () {
     Route::get('win-an-xbox-series-x-3', 'ProductController@product73')->name('product.73');
     Route::get('win-an-apple-watch-series-8-3', 'ProductController@product74')->name('product.74');
 });
+
+Route::get('/check-cert', 'AppController@checkCert')->name('app.check-cert');

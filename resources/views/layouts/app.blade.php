@@ -175,4 +175,34 @@
         })
     });      
 </script>
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+
+<script src="/assets/js/owl-carousel/owl.carousel.js"></script>
+<script src="/assets/js/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+    $(document).ready(function() {
+        var owl = $(".slider__wrapper");
+
+        owl.owlCarousel({
+            singleItem: true,
+            items: 1,
+            loop: true,
+            navigation : true,
+            slideSpeed : 300,
+            dots: true,
+            autoPlay: 3000,
+            stopOnHover : true,
+        });
+
+        // Custom Navigation Events
+        $(".slider__button_next").click(function(){
+            owl.trigger('owl.next');
+        })
+        $(".slider__button_prev").click(function(){
+            owl.trigger('owl.prev');
+        })
+    });
+</script>
 </html>

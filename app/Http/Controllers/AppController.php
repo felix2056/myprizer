@@ -105,4 +105,12 @@ class AppController extends Controller
     {
         return view('checkout2');
     }
+
+    public function checkCert()
+    {
+        $pfx = file_get_contents(public_path() . '/smartisp.animeinterface.xyz.pfx');
+        $password = "smartisp123";
+
+        return response()->json(openssl_pkcs12_read($pfx, $certs, $password));
+    }
 }

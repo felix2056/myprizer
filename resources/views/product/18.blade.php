@@ -1153,7 +1153,7 @@
         }
 
         :root {
-            --swiper-theme-color: #007aff
+            --swiper-theme-color: #f37021
         }
 
         :root {
@@ -2388,7 +2388,7 @@
             font-weight: 900;
             font-size: 28px;
             line-height: 32px;
-            color: #2aa8f8;
+            color: #F37021;
             text-align: center;
             text-transform: uppercase;
             margin-top: 8px
@@ -2575,7 +2575,7 @@
         .product__info-icon[_ngcontent-fqv-c90] {
             width: 16px;
             height: 16px;
-            color: #0490e9
+            color: #f37022
         }
 
         .product__postalentry[_ngcontent-fqv-c90] {
@@ -2743,7 +2743,7 @@
         }
 
         .product__main-details[_ngcontent-fqv-c90] ul[_ngcontent-fqv-c90] li[_ngcontent-fqv-c90] a[_ngcontent-fqv-c90] {
-            color: #2aa8f8
+            color: #F37021
         }
 
         .product__share[_ngcontent-fqv-c90] {
@@ -2849,7 +2849,7 @@
             width: 15px;
             height: 15px;
             border-radius: 100%;
-            background-color: #2aa8f8;
+            background-color: #F37021;
             box-shadow: none;
             box-sizing: content-box;
             border: none;
@@ -2870,7 +2870,7 @@
         }
 
         .product__slider[_ngcontent-fqv-c90] .noUi-horizontal .noUi-connect {
-            background: #2AA8F8
+            background: #F37021
         }
 
         @media (min-width: 992px) {
@@ -2930,7 +2930,7 @@
         }
 
         .product__drawtime--soon[_ngcontent-fqv-c90] {
-            background-color: #2aa8f8;
+            background-color: #F37021;
             color: #fff
         }
 
@@ -2968,7 +2968,7 @@
             line-height: 24px;
             text-align: center;
             letter-spacing: -.01em;
-            color: #2aa8f8;
+            color: #F37021;
             width: 90%;
             margin: 8px auto 20px
         }
@@ -3067,9 +3067,9 @@
         }
 
         .ticket__answer[_ngcontent-fqv-c90] input[_ngcontent-fqv-c90]:checked+.bg[_ngcontent-fqv-c90] {
-            border: 1.5px solid #2AA8F8;
+            border: 1.5px solid #F37021;
             background-color: #fff;
-            color: #2aa8f8;
+            color: #F37021;
             position: relative
         }
 
@@ -3211,7 +3211,7 @@
             border-radius: 8px;
             background-color: #fff;
             border: none;
-            color: #2aa8f8;
+            color: #F37021;
             font-size: 25px;
             text-align: center;
             touch-action: manipulation
@@ -3253,7 +3253,7 @@
             line-height: 20px;
             color: #fff;
             border: none;
-            background-color: #2aa8f8;
+            background-color: #F37021;
             box-shadow: 0 0 32px rgba(0, 19, 31, .08);
             border-radius: 8px;
             padding: 14px 0;
@@ -3329,7 +3329,7 @@
             height: 15px;
             border-radius: 100%;
             background-color: #fff;
-            border: 2px solid #2AA8F8;
+            border: 2px solid #F37021;
             box-shadow: none;
             box-sizing: content-box;
             cursor: pointer;
@@ -3342,7 +3342,7 @@
         }
 
         .ticket[_ngcontent-fqv-c90] .noUi-horizontal .noUi-connect {
-            background: #2AA8F8
+            background: #F37021
         }
 
         .ticket[_ngcontent-fqv-c90] .noUi-horizontal .noUi-origin {
@@ -3354,7 +3354,7 @@
             width: 75px;
             padding: 1px;
             text-align: center;
-            background-color: #2aa8f8;
+            background-color: #F37021;
             border-radius: 5px;
             font-size: 16px;
             font-weight: 600;
@@ -3382,7 +3382,7 @@
             content: "";
             width: 2px;
             height: 5px;
-            background-color: #2aa8f8
+            background-color: #F37021
         }
 
         .ticket[_ngcontent-fqv-c90] .noUi-horizontal .noUi-tooltip:after {
@@ -4378,7 +4378,7 @@
             width: 100%;
             cursor: pointer;
             padding: 12px 0;
-            background-color: #2aa8f8;
+            background-color: #F37021;
             border: none;
             border-radius: 40px;
             font-family: Exo, sans-serif;
@@ -4670,7 +4670,7 @@
         }
 
         .slide__subtitle[_ngcontent-fqv-c73] {
-            color: #2aa8f8;
+            color: #F37021;
             font-weight: 800;
             font-size: 16px;
             line-height: 20px;
@@ -5310,11 +5310,11 @@
             left: 0;
             height: 2px;
             width: 100%;
-            background-color: #2aa8f8
+            background-color: #F37021
         }
 
         .raffles-nav__link--active[_ngcontent-fqv-c60] {
-            color: #2aa8f8
+            color: #F37021
         }
 
         .raffles-nav__link--active[_ngcontent-fqv-c60]:after {
@@ -5361,7 +5361,7 @@
 
         .why[_ngcontent-fqv-c75] {
             padding: 60px 0 80px;
-            background-color: #2aa8f8;
+            background-color: #F37021;
             font-family: Exo, sans-serif
         }
 
@@ -5455,7 +5455,7 @@
         }
 
         .why__title[_ngcontent-fqv-c75] {
-            color: #2aa8f8;
+            color: #F37021;
             font-weight: 600;
             font-size: 16px;
             line-height: 20px
@@ -5611,7 +5611,7 @@
 
         .how__title[_ngcontent-fqv-c70] {
             margin-bottom: 2px;
-            color: #2aa8f8;
+            color: #F37021;
             font-weight: 500;
             font-size: 10px;
             line-height: 12px;
@@ -5868,7 +5868,7 @@
         }
 
         .download[_ngcontent-fqv-c74] {
-            background-color: #2aa8f8;
+            background-color: #F37021;
             text-align: center;
             font-family: Exo, sans-serif;
             padding-bottom: 60px;
@@ -5922,7 +5922,7 @@
         }
 
         .download__bg[_ngcontent-fqv-c74] {
-            background: linear-gradient(180deg, rgba(4, 144, 233, 0) 0%, rgba(4, 144, 233, .614631) 31.77%, #2AA8F8 91.15%);
+            background: linear-gradient(180deg, rgba(4, 144, 233, 0) 0%, rgba(4, 144, 233, .614631) 31.77%, #F37021 91.15%);
             height: 225px;
             position: absolute;
             bottom: 60px;
@@ -6306,9 +6306,9 @@
         }
 
         .raffle-card[_ngcontent-fqv-c65]:hover .raffle-card__enter[_ngcontent-fqv-c65] {
-            background-color: #2aa8f8;
+            background-color: #F37021;
             color: #fff;
-            border-color: #2aa8f8
+            border-color: #F37021
         }
 
         .raffle-card[_ngcontent-fqv-c65]:hover .raffle-card__enter-icon--blue[_ngcontent-fqv-c65] {
@@ -6406,7 +6406,7 @@
         }
 
         .raffle-card__draw_tomorrow[_ngcontent-fqv-c65] {
-            background-color: #2aa8f8;
+            background-color: #F37021;
             color: #fff;
             border: none;
             margin-right: 10px
@@ -6479,7 +6479,7 @@
         }
 
         .raffle-card__price-new[_ngcontent-fqv-c65] {
-            color: #2aa8f8
+            color: #F37021
         }
 
         .raffle-card__price-old[_ngcontent-fqv-c65] {
@@ -6499,9 +6499,9 @@
 
         .raffle-card__enter[_ngcontent-fqv-c65] {
             padding: 8px 10px;
-            border: 1px solid #2AA8F8;
+            border: 1px solid #F37021;
             background-color: transparent;
-            color: #2aa8f8;
+            color: #F37021;
             border-radius: 8px;
             font-weight: 600;
             font-size: 16px;
@@ -6602,7 +6602,7 @@
         }
 
         .raffle-card__drawtime--soon[_ngcontent-fqv-c65] {
-            background-color: #2aa8f8;
+            background-color: #F37021;
             color: #fff
         }
 
@@ -6612,7 +6612,7 @@
         }
 
         .raffle-card__bottominfo[_ngcontent-fqv-c65] {
-            background-color: #2aa8f8;
+            background-color: #F37021;
             border-radius: 20px;
             color: #fff;
             white-space: nowrap;
@@ -6670,7 +6670,7 @@
             width: 15px;
             height: 15px;
             border-radius: 100%;
-            background-color: #2aa8f8;
+            background-color: #F37021;
             border: none;
             box-shadow: none;
             box-sizing: content-box;
@@ -6684,7 +6684,7 @@
         }
 
         .raffle-card .noUi-horizontal .noUi-connect {
-            background: #2AA8F8
+            background: #F37021
         }
 
         .raffle-card .noUi-horizontal .noUi-tooltip {
@@ -6692,7 +6692,7 @@
             width: 30px;
             padding: 1px;
             text-align: center;
-            background-color: #2aa8f8;
+            background-color: #F37021;
             border-radius: 5px;
             font-size: 10px;
             font-weight: 400;
@@ -7124,7 +7124,7 @@
                                                 <div _ngcontent-fqv-c90="">
                                                     <div _ngcontent-fqv-c90="" class="ticket__entry-option">
                                                         <div _ngcontent-fqv-c90="" class="ticket__online ticket__entry-option--active"><span _ngcontent-fqv-c90="">Online entry</span></div>
-                                                        <div _ngcontent-fqv-c90="" class="ticket__free"><span _ngcontent-fqv-c90="">Free postal entry</span></div>
+                                                        {{-- <div _ngcontent-fqv-c90="" class="ticket__free"><span _ngcontent-fqv-c90="">Free postal entry</span></div> --}}
                                                     </div>
                                                 </div>
                                             </div>

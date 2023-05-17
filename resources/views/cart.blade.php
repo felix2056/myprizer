@@ -317,7 +317,7 @@
         }
 
         :root {
-            --swiper-theme-color: #007aff
+            --swiper-theme-color: #f37021
         }
 
         :root {
@@ -1397,9 +1397,9 @@
         }
 
         .raffle-card[_ngcontent-hpj-c65]:hover .raffle-card__enter[_ngcontent-hpj-c65] {
-            background-color: #2aa8f8;
+            background-color: #F37021;
             color: #fff;
-            border-color: #2aa8f8
+            border-color: #F37021
         }
 
         .raffle-card[_ngcontent-hpj-c65]:hover .raffle-card__enter-icon--blue[_ngcontent-hpj-c65] {
@@ -1497,7 +1497,7 @@
         }
 
         .raffle-card__draw_tomorrow[_ngcontent-hpj-c65] {
-            background-color: #2aa8f8;
+            background-color: #F37021;
             color: #fff;
             border: none;
             margin-right: 10px
@@ -1570,7 +1570,7 @@
         }
 
         .raffle-card__price-new[_ngcontent-hpj-c65] {
-            color: #2aa8f8
+            color: #F37021
         }
 
         .raffle-card__price-old[_ngcontent-hpj-c65] {
@@ -1590,9 +1590,9 @@
 
         .raffle-card__enter[_ngcontent-hpj-c65] {
             padding: 8px 10px;
-            border: 1px solid #2AA8F8;
+            border: 1px solid #F37021;
             background-color: transparent;
-            color: #2aa8f8;
+            color: #F37021;
             border-radius: 8px;
             font-weight: 600;
             font-size: 16px;
@@ -1693,7 +1693,7 @@
         }
 
         .raffle-card__drawtime--soon[_ngcontent-hpj-c65] {
-            background-color: #2aa8f8;
+            background-color: #F37021;
             color: #fff
         }
 
@@ -1703,7 +1703,7 @@
         }
 
         .raffle-card__bottominfo[_ngcontent-hpj-c65] {
-            background-color: #2aa8f8;
+            background-color: #F37021;
             border-radius: 20px;
             color: #fff;
             white-space: nowrap;
@@ -1761,7 +1761,7 @@
             width: 15px;
             height: 15px;
             border-radius: 100%;
-            background-color: #2aa8f8;
+            background-color: #F37021;
             border: none;
             box-shadow: none;
             box-sizing: content-box;
@@ -1775,7 +1775,7 @@
         }
 
         .raffle-card .noUi-horizontal .noUi-connect {
-            background: #2AA8F8
+            background: #F37021
         }
 
         .raffle-card .noUi-horizontal .noUi-tooltip {
@@ -1783,7 +1783,7 @@
             width: 30px;
             padding: 1px;
             text-align: center;
-            background-color: #2aa8f8;
+            background-color: #F37021;
             border-radius: 5px;
             font-size: 10px;
             font-weight: 400;
@@ -2180,11 +2180,11 @@
         }
 
         .draw-result-card[_ngcontent-hpj-c93] .button_border[_ngcontent-hpj-c93] {
-            border: 2px solid #2AA8F8;
+            border: 2px solid #F37021;
             background: transparent;
             width: 100%;
             border-radius: 4px;
-            color: #2aa8f8;
+            color: #F37021;
             padding: 7px 0;
             max-height: 44px;
             display: -webkit-flex;
@@ -2196,7 +2196,7 @@
         }
 
         .draw-result-card[_ngcontent-hpj-c93] .button_border[_ngcontent-hpj-c93]:hover {
-            background: #2AA8F8;
+            background: #F37021;
             color: #fff
         }
 
@@ -3040,7 +3040,7 @@
             justify-content: center;
             -webkit-align-items: center;
             align-items: center;
-            color: #2aa8f8;
+            color: #F37021;
             line-height: .5;
             font-weight: 700;
             font-size: 18px;
@@ -3142,7 +3142,7 @@
             width: 108px;
             height: 31px;
             border-radius: 0 4px 4px 0;
-            background-color: #2aa8f8;
+            background-color: #F37021;
             font-size: 14px;
             font-weight: 500;
             line-height: 1;
@@ -3256,7 +3256,7 @@
         .cart-total__remove-coupon[_ngcontent-hpj-c126] {
             font-weight: 400;
             font-size: 14px;
-            color: #2aa8f8;
+            color: #F37021;
             transition: color .3s ease;
             text-decoration: none
         }

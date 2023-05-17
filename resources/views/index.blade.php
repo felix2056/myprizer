@@ -43,8 +43,11 @@
     <script src="/assets/js/elmahio.min.js?apiKey=1eb0422955ae4641859f93f0e30ab4c4&amp;logId=66938de3-706b-4699-bb54-0f8ce932b98f" type="text/javascript"></script>
     <script src="https://www.googleoptimize.com/optimize.js?id=OPT-THKDQV3" async=""></script>
 
-    <base href="/">
+    <link rel="stylesheet" type="text/css" href="/assets/js/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/js/owl-carousel/owl.carousel.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/js/owl-carousel/owl.theme.css"/>
 
+    <base href="/">
 
     <script type="text/javascript" src="/config/env.js"></script>
     <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async=""></script>
@@ -1153,7 +1156,7 @@
         }
 
         :root {
-            --swiper-theme-color: #007aff
+            --swiper-theme-color: #f37021
         }
 
         :root {
@@ -1829,7 +1832,7 @@
             width: 100%;
             cursor: pointer;
             padding: 12px 0;
-            background-color: #2aa8f8;
+            background-color: #F37021;
             border: none;
             border-radius: 40px;
             font-family: Exo, sans-serif;
@@ -1940,16 +1943,22 @@
             }
         }
 
+        .slider__wrapper{ height: 100%; }
+        .owl-carousel .owl-wrapper-outer { height: 100%; }
+        .owl-wrapper { height: 100%; }
+        .owl-item { height: 100%; }
+        .owl-carousel .owl-item img { height: 100%; }
+
         .slide[_ngcontent-uuw-c73] {
             text-decoration: none;
-            position: absolute;
+            /* position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             transition: opacity .6s;
             opacity: 0;
-            pointer-events: none
+            pointer-events: none */
         }
 
         .slide_active[_ngcontent-uuw-c73] {
@@ -1962,10 +1971,10 @@
             position: relative;
             height: 100%;
             width: 100%;
-            display: -webkit-flex;
+            /* display: -webkit-flex;
             display: flex;
             -webkit-align-items: flex-end;
-            align-items: flex-end
+            align-items: flex-end */
         }
 
         .slide__image[_ngcontent-uuw-c73] {
@@ -2121,7 +2130,7 @@
         }
 
         .slide__subtitle[_ngcontent-uuw-c73] {
-            color: #2aa8f8;
+            color: #F37021;
             font-weight: 800;
             font-size: 16px;
             line-height: 20px;
@@ -2761,11 +2770,11 @@
             left: 0;
             height: 2px;
             width: 100%;
-            background-color: #2aa8f8
+            background-color: #F37021
         }
 
         .raffles-nav__link--active[_ngcontent-uuw-c60] {
-            color: #2aa8f8
+            color: #F37021
         }
 
         .raffles-nav__link--active[_ngcontent-uuw-c60]:after {
@@ -2812,7 +2821,7 @@
 
         .why[_ngcontent-uuw-c75] {
             padding: 60px 0 80px;
-            background-color: #2aa8f8;
+            background-color: #F37021;
             font-family: Exo, sans-serif
         }
 
@@ -2906,7 +2915,7 @@
         }
 
         .why__title[_ngcontent-uuw-c75] {
-            color: #2aa8f8;
+            color: #F37021;
             font-weight: 600;
             font-size: 16px;
             line-height: 20px
@@ -3062,7 +3071,7 @@
 
         .how__title[_ngcontent-uuw-c70] {
             margin-bottom: 2px;
-            color: #2aa8f8;
+            color: #F37021;
             font-weight: 500;
             font-size: 10px;
             line-height: 12px;
@@ -3678,7 +3687,7 @@
         }
 
         .download[_ngcontent-uuw-c74] {
-            background-color: #2aa8f8;
+            background-color: #F37021;
             text-align: center;
             font-family: Exo, sans-serif;
             padding-bottom: 60px;
@@ -3732,7 +3741,7 @@
         }
 
         .download__bg[_ngcontent-uuw-c74] {
-            background: linear-gradient(180deg, rgba(4, 144, 233, 0) 0%, rgba(4, 144, 233, .614631) 31.77%, #2AA8F8 91.15%);
+            background: linear-gradient(180deg, rgba(4, 144, 233, 0) 0%, rgba(4, 144, 233, .614631) 31.77%, #F37021 91.15%);
             height: 225px;
             position: absolute;
             bottom: 60px;
@@ -4202,9 +4211,9 @@
         }
 
         .raffle-card[_ngcontent-uuw-c65]:hover .raffle-card__enter[_ngcontent-uuw-c65] {
-            background-color: #2aa8f8;
+            background-color: #F37021;
             color: #fff;
-            border-color: #2aa8f8
+            border-color: #F37021
         }
 
         .raffle-card[_ngcontent-uuw-c65]:hover .raffle-card__enter-icon--blue[_ngcontent-uuw-c65] {
@@ -4302,7 +4311,7 @@
         }
 
         .raffle-card__draw_tomorrow[_ngcontent-uuw-c65] {
-            background-color: #2aa8f8;
+            background-color: #F37021;
             color: #fff;
             border: none;
             margin-right: 10px
@@ -4375,7 +4384,7 @@
         }
 
         .raffle-card__price-new[_ngcontent-uuw-c65] {
-            color: #2aa8f8
+            color: #F37021
         }
 
         .raffle-card__price-old[_ngcontent-uuw-c65] {
@@ -4395,9 +4404,9 @@
 
         .raffle-card__enter[_ngcontent-uuw-c65] {
             padding: 8px 10px;
-            border: 1px solid #2AA8F8;
+            border: 1px solid #F37021;
             background-color: transparent;
-            color: #2aa8f8;
+            color: #F37021;
             border-radius: 8px;
             font-weight: 600;
             font-size: 16px;
@@ -4498,7 +4507,7 @@
         }
 
         .raffle-card__drawtime--soon[_ngcontent-uuw-c65] {
-            background-color: #2aa8f8;
+            background-color: #F37021;
             color: #fff
         }
 
@@ -4508,7 +4517,7 @@
         }
 
         .raffle-card__bottominfo[_ngcontent-uuw-c65] {
-            background-color: #2aa8f8;
+            background-color: #F37021;
             border-radius: 20px;
             color: #fff;
             white-space: nowrap;
@@ -4566,7 +4575,7 @@
             width: 15px;
             height: 15px;
             border-radius: 100%;
-            background-color: #2aa8f8;
+            background-color: #F37021;
             border: none;
             box-shadow: none;
             box-sizing: content-box;
@@ -4580,7 +4589,7 @@
         }
 
         .raffle-card .noUi-horizontal .noUi-connect {
-            background: #2AA8F8
+            background: #F37021
         }
 
         .raffle-card .noUi-horizontal .noUi-tooltip {
@@ -4588,7 +4597,7 @@
             width: 30px;
             padding: 1px;
             text-align: center;
-            background-color: #2aa8f8;
+            background-color: #F37021;
             border-radius: 5px;
             font-size: 10px;
             font-weight: 400;
@@ -4823,7 +4832,7 @@
             font-weight: 900;
             font-size: 28px;
             line-height: 32px;
-            color: #2aa8f8;
+            color: #F37021;
             text-align: center;
             text-transform: uppercase;
             margin-top: 8px
@@ -5010,7 +5019,7 @@
         .product__info-icon[_ngcontent-uuw-c88] {
             width: 16px;
             height: 16px;
-            color: #0490e9
+            color: #f37022
         }
 
         .product__postalentry[_ngcontent-uuw-c88] {
@@ -5178,7 +5187,7 @@
         }
 
         .product__main-details[_ngcontent-uuw-c88] ul[_ngcontent-uuw-c88] li[_ngcontent-uuw-c88] a[_ngcontent-uuw-c88] {
-            color: #2aa8f8
+            color: #F37021
         }
 
         .product__share[_ngcontent-uuw-c88] {
@@ -5284,7 +5293,7 @@
             width: 15px;
             height: 15px;
             border-radius: 100%;
-            background-color: #2aa8f8;
+            background-color: #F37021;
             box-shadow: none;
             box-sizing: content-box;
             border: none;
@@ -5305,7 +5314,7 @@
         }
 
         .product__slider[_ngcontent-uuw-c88] .noUi-horizontal .noUi-connect {
-            background: #2AA8F8
+            background: #F37021
         }
 
         @media (min-width: 992px) {
@@ -5365,7 +5374,7 @@
         }
 
         .product__drawtime--soon[_ngcontent-uuw-c88] {
-            background-color: #2aa8f8;
+            background-color: #F37021;
             color: #fff
         }
 
@@ -5403,7 +5412,7 @@
             line-height: 24px;
             text-align: center;
             letter-spacing: -.01em;
-            color: #2aa8f8;
+            color: #F37021;
             width: 90%;
             margin: 8px auto 20px
         }
@@ -5502,9 +5511,9 @@
         }
 
         .ticket__answer[_ngcontent-uuw-c88] input[_ngcontent-uuw-c88]:checked+.bg[_ngcontent-uuw-c88] {
-            border: 1.5px solid #2AA8F8;
+            border: 1.5px solid #F37021;
             background-color: #fff;
-            color: #2aa8f8;
+            color: #F37021;
             position: relative
         }
 
@@ -5646,7 +5655,7 @@
             border-radius: 8px;
             background-color: #fff;
             border: none;
-            color: #2aa8f8;
+            color: #F37021;
             font-size: 25px;
             text-align: center;
             touch-action: manipulation
@@ -5688,7 +5697,7 @@
             line-height: 20px;
             color: #fff;
             border: none;
-            background-color: #2aa8f8;
+            background-color: #F37021;
             box-shadow: 0 0 32px rgba(0, 19, 31, .08);
             border-radius: 8px;
             padding: 14px 0;
@@ -5764,7 +5773,7 @@
             height: 15px;
             border-radius: 100%;
             background-color: #fff;
-            border: 2px solid #2AA8F8;
+            border: 2px solid #F37021;
             box-shadow: none;
             box-sizing: content-box;
             cursor: pointer;
@@ -5777,7 +5786,7 @@
         }
 
         .ticket[_ngcontent-uuw-c88] .noUi-horizontal .noUi-connect {
-            background: #2AA8F8
+            background: #F37021
         }
 
         .ticket[_ngcontent-uuw-c88] .noUi-horizontal .noUi-origin {
@@ -5789,7 +5798,7 @@
             width: 75px;
             padding: 1px;
             text-align: center;
-            background-color: #2aa8f8;
+            background-color: #F37021;
             border-radius: 5px;
             font-size: 16px;
             font-weight: 600;
@@ -5817,7 +5826,7 @@
             content: "";
             width: 2px;
             height: 5px;
-            background-color: #2aa8f8
+            background-color: #F37021
         }
 
         .ticket[_ngcontent-uuw-c88] .noUi-horizontal .noUi-tooltip:after {
@@ -6537,7 +6546,7 @@
         }
 
         .ticket-card__amount[_ngcontent-uuw-c80] {
-            background: #0490e9;
+            background: #f37022;
             color: rgba(255, 255, 255, .6);
             font-weight: 600;
             font-size: 16px;
@@ -6827,166 +6836,194 @@
                         <!---->
                     </div>
                 </app-header>
+                
                 <app-top-availability-message _ngcontent-uuw-c76="" _nghost-uuw-c66="">
                     <!---->
                 </app-top-availability-message>
+                
                 <app-home-slider _ngcontent-uuw-c76="" autoplaytimer="8000" _nghost-uuw-c73="">
                     <section _ngcontent-uuw-c73="" class="hero-slider ng-star-inserted">
                         <div _ngcontent-uuw-c73="" class="slider">
-                            <div _ngcontent-uuw-c73="" class="slide__gradient d-lg-none"></div><button _ngcontent-uuw-c73="" class="slider__button slider__button_prev ng-star-inserted">
-                                <svg-icon _ngcontent-uuw-c73="" name="arrow-left-7-d" class="slider__icon" _nghost-uuw-c61="" role="img"><svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg" class="svg-icon" style="fill: currentcolor;">
+                            <div _ngcontent-uuw-c73="" class="slide__gradient d-lg-none"></div>
+                            <button _ngcontent-uuw-c73="" class="slider__button slider__button_prev ng-star-inserted">
+                                <svg-icon _ngcontent-uuw-c73="" name="arrow-left-7-d" class="slider__icon" _nghost-uuw-c61="" role="img">
+                                    <svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg" class="svg-icon" style="fill: currentcolor;">
                                         <path d="M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z"></path>
-                                    </svg></svg-icon>
+                                    </svg>
+                                </svg-icon>
                             </button>
                             <!---->
-                            <div _ngcontent-uuw-c73="" class="slider__wrapper"><a _ngcontent-uuw-c73="" class="slide ng-star-inserted" href="https://7daysperformance.co.uk/product/win-g80-m3-comp-1000cash?from=home-hero">
+                            <div _ngcontent-uuw-c73="" class="slider__wrapper">
+                                <a _ngcontent-uuw-c73="" class="slide ng-star-inserted" href="https://7daysperformance.co.uk/product/win-g80-m3-comp-1000cash?from=home-hero">
                                     <div _ngcontent-uuw-c73="" class="slide__content">
                                         <div _ngcontent-uuw-c73="" class="slide__image ng-star-inserted" style="background-image: url(&quot;https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/herosection/0033/34/57b924623041ea9df0738ab16c49104f6b07a88b.jpg&quot;);">
                                             <div _ngcontent-uuw-c73="" class="slide__overlay"></div>
                                         </div>
-                                        <!---->
-                                        <!---->
-                                        <!---->
+
                                         <div _ngcontent-uuw-c73="" class="slide__gradient d-lg-none"></div>
                                         <div _ngcontent-uuw-c73="" class="slide__texts">
                                             <h2 _ngcontent-uuw-c73="" class="slide__title ng-star-inserted"> Win This BMW G80 M3 </h2>
                                             <!---->
                                             <h3 _ngcontent-uuw-c73="" class="slide__subtitle ng-star-inserted"> DRAW TONIGHT 8PM </h3>
                                             <!---->
-                                            <div _ngcontent-uuw-c73="" class="slider__enter-btn"><button _ngcontent-uuw-c73="" class="d-flex align-items-center justify-content-center"><span _ngcontent-uuw-c73="">Enter now</span>
-                                                    <svg-icon _ngcontent-uuw-c73="" name="ticket-small" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
+                                            <div _ngcontent-uuw-c73="" class="slider__enter-btn">
+                                                <button _ngcontent-uuw-c73="" class="d-flex align-items-center justify-content-center"><span _ngcontent-uuw-c73="">Enter now</span>
+                                                    <svg-icon _ngcontent-uuw-c73="" name="ticket-small" _nghost-uuw-c61="" role="img">
+                                                        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
                                                             <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
                                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
                                                             <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
                                                             <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                        </svg></svg-icon>
-                                                </button></div>
+                                                        </svg>
+                                                    </svg-icon>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
-                                </a><a _ngcontent-uuw-c73="" class="slide ng-star-inserted" href="https://7daysperformance.co.uk/product/win-30-000-tax-free-cash?from=home-hero">
+                                </a>
+                                <a _ngcontent-uuw-c73="" class="slide ng-star-inserted" href="https://7daysperformance.co.uk/product/win-30-000-tax-free-cash?from=home-hero">
                                     <div _ngcontent-uuw-c73="" class="slide__content">
                                         <div _ngcontent-uuw-c73="" class="slide__image ng-star-inserted" style="background-image: url(&quot;https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/herosection/0033/34/5b24f8de2b9f3a7172bc8ee297ec7c8a4ac08ff3.jpg&quot;);">
                                             <div _ngcontent-uuw-c73="" class="slide__overlay"></div>
                                         </div>
-                                        <!---->
-                                        <!---->
-                                        <!---->
+
                                         <div _ngcontent-uuw-c73="" class="slide__gradient d-lg-none"></div>
                                         <div _ngcontent-uuw-c73="" class="slide__texts">
                                             <!---->
                                             <h3 _ngcontent-uuw-c73="" class="slide__subtitle ng-star-inserted"> DRAW TONIGHT 8PM </h3>
                                             <!---->
-                                            <div _ngcontent-uuw-c73="" class="slider__enter-btn"><button _ngcontent-uuw-c73="" class="d-flex align-items-center justify-content-center"><span _ngcontent-uuw-c73="">Enter now</span>
-                                                    <svg-icon _ngcontent-uuw-c73="" name="ticket-small" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
+                                            <div _ngcontent-uuw-c73="" class="slider__enter-btn">
+                                                <button _ngcontent-uuw-c73="" class="d-flex align-items-center justify-content-center">
+                                                    <span _ngcontent-uuw-c73="">Enter now</span>
+                                                    <svg-icon _ngcontent-uuw-c73="" name="ticket-small" _nghost-uuw-c61="" role="img">
+                                                        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
                                                             <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
                                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
                                                             <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
                                                             <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                        </svg></svg-icon>
-                                                </button></div>
+                                                        </svg>
+                                                    </svg-icon>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
-                                </a><a _ngcontent-uuw-c73="" class="slide ng-star-inserted" href="https://7daysperformance.co.uk/product/win-urban-defender-2000cash?from=home-hero">
+                                </a>
+                                <a _ngcontent-uuw-c73="" class="slide ng-star-inserted" href="https://7daysperformance.co.uk/product/win-urban-defender-2000cash?from=home-hero">
                                     <div _ngcontent-uuw-c73="" class="slide__content">
                                         <div _ngcontent-uuw-c73="" class="slide__image ng-star-inserted" style="background-image: url(&quot;https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/herosection/0033/34/bb6001d9b1f65abb7b771517fd420d0bee6f2641.jpg&quot;);">
                                             <div _ngcontent-uuw-c73="" class="slide__overlay"></div>
                                         </div>
-                                        <!---->
-                                        <!---->
-                                        <!---->
+
                                         <div _ngcontent-uuw-c73="" class="slide__gradient d-lg-none"></div>
                                         <div _ngcontent-uuw-c73="" class="slide__texts">
                                             <h2 _ngcontent-uuw-c73="" class="slide__title ng-star-inserted"> Win This Urban V8 Defender </h2>
                                             <!---->
                                             <h3 _ngcontent-uuw-c73="" class="slide__subtitle ng-star-inserted"> DRAW SUNDAY 8PM </h3>
                                             <!---->
-                                            <div _ngcontent-uuw-c73="" class="slider__enter-btn"><button _ngcontent-uuw-c73="" class="d-flex align-items-center justify-content-center"><span _ngcontent-uuw-c73="">Enter now</span>
-                                                    <svg-icon _ngcontent-uuw-c73="" name="ticket-small" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
+                                            <div _ngcontent-uuw-c73="" class="slider__enter-btn">
+                                                <button _ngcontent-uuw-c73="" class="d-flex align-items-center justify-content-center">
+                                                    <span _ngcontent-uuw-c73="">Enter now</span>
+                                                    <svg-icon _ngcontent-uuw-c73="" name="ticket-small" _nghost-uuw-c61="" role="img">
+                                                        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
                                                             <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
                                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
                                                             <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
                                                             <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                        </svg></svg-icon>
-                                                </button></div>
+                                                        </svg>
+                                                    </svg-icon>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
-                                </a><a _ngcontent-uuw-c73="" class="slide ng-star-inserted" href="https://7daysperformance.co.uk/product/win-stage-2-m4-comp-1000cash?from=home-hero">
+                                </a>
+                                <a _ngcontent-uuw-c73="" class="slide ng-star-inserted" href="https://7daysperformance.co.uk/product/win-stage-2-m4-comp-1000cash?from=home-hero">
                                     <div _ngcontent-uuw-c73="" class="slide__content">
                                         <div _ngcontent-uuw-c73="" class="slide__image ng-star-inserted" style="background-image: url(&quot;https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/herosection/0033/34/bb9108958253e34112dda97621b7a188700b7de4.jpg&quot;);">
                                             <div _ngcontent-uuw-c73="" class="slide__overlay"></div>
                                         </div>
-                                        <!---->
-                                        <!---->
-                                        <!---->
                                         <div _ngcontent-uuw-c73="" class="slide__gradient d-lg-none"></div>
                                         <div _ngcontent-uuw-c73="" class="slide__texts">
                                             <h2 _ngcontent-uuw-c73="" class="slide__title ng-star-inserted"> Win This Stage 2 M4 Comp </h2>
                                             <!---->
                                             <h3 _ngcontent-uuw-c73="" class="slide__subtitle ng-star-inserted"> DRAW SUNDAY 8PM </h3>
                                             <!---->
-                                            <div _ngcontent-uuw-c73="" class="slider__enter-btn"><button _ngcontent-uuw-c73="" class="d-flex align-items-center justify-content-center"><span _ngcontent-uuw-c73="">Enter now</span>
-                                                    <svg-icon _ngcontent-uuw-c73="" name="ticket-small" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
+                                            <div _ngcontent-uuw-c73="" class="slider__enter-btn">
+                                                <button _ngcontent-uuw-c73="" class="d-flex align-items-center justify-content-center">
+                                                    <span _ngcontent-uuw-c73="">Enter now</span>
+                                                    <svg-icon _ngcontent-uuw-c73="" name="ticket-small" _nghost-uuw-c61="" role="img">
+                                                        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
                                                             <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
                                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
                                                             <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
                                                             <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                        </svg></svg-icon>
-                                                </button></div>
+                                                        </svg>
+                                                    </svg-icon>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
-                                </a><a _ngcontent-uuw-c73="" class="slide ng-star-inserted" href="https://7daysperformance.co.uk/product/win-pepsi-rolex-gmt-master-ii?from=home-hero">
+                                </a>
+                                <a _ngcontent-uuw-c73="" class="slide ng-star-inserted" href="https://7daysperformance.co.uk/product/win-pepsi-rolex-gmt-master-ii?from=home-hero">
                                     <div _ngcontent-uuw-c73="" class="slide__content">
                                         <div _ngcontent-uuw-c73="" class="slide__image ng-star-inserted" style="background-image: url(&quot;https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/herosection/0033/34/9a90d8d00904ce4bbf74a5d26299749c451c4f6a.jpg&quot;);">
                                             <div _ngcontent-uuw-c73="" class="slide__overlay"></div>
                                         </div>
-                                        <!---->
-                                        <!---->
-                                        <!---->
+
                                         <div _ngcontent-uuw-c73="" class="slide__gradient d-lg-none"></div>
                                         <div _ngcontent-uuw-c73="" class="slide__texts">
                                             <h2 _ngcontent-uuw-c73="" class="slide__title ng-star-inserted"> Win This Rolex Pepsi </h2>
                                             <!---->
                                             <h3 _ngcontent-uuw-c73="" class="slide__subtitle ng-star-inserted"> DRAW SUNDAY 8PM </h3>
                                             <!---->
-                                            <div _ngcontent-uuw-c73="" class="slider__enter-btn"><button _ngcontent-uuw-c73="" class="d-flex align-items-center justify-content-center"><span _ngcontent-uuw-c73="">Enter now</span>
-                                                    <svg-icon _ngcontent-uuw-c73="" name="ticket-small" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
+                                            <div _ngcontent-uuw-c73="" class="slider__enter-btn">
+                                                <button _ngcontent-uuw-c73="" class="d-flex align-items-center justify-content-center">
+                                                    <span _ngcontent-uuw-c73="">Enter now</span>
+                                                    <svg-icon _ngcontent-uuw-c73="" name="ticket-small" _nghost-uuw-c61="" role="img">
+                                                        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
                                                             <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
                                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
                                                             <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
                                                             <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                        </svg></svg-icon>
-                                                </button></div>
+                                                        </svg>
+                                                    </svg-icon>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
-                                </a><a _ngcontent-uuw-c73="" class="slide ng-star-inserted slide_active" href="https://7daysperformance.co.uk/instant-wins">
+                                </a>
+                                <a _ngcontent-uuw-c73="" class="slide ng-star-inserted slide_active" href="https://7daysperformance.co.uk/instant-wins">
                                     <div _ngcontent-uuw-c73="" class="slide__content">
                                         <div _ngcontent-uuw-c73="" class="slide__image ng-star-inserted" style="background-image: url(&quot;https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/herosection/0033/33/e36c1b355599615ca98c7a8a321f6334a03bc144.jpg&quot;);">
                                             <div _ngcontent-uuw-c73="" class="slide__overlay"></div>
                                         </div>
-                                        <!---->
-                                        <!---->
-                                        <!---->
+
                                         <div _ngcontent-uuw-c73="" class="slide__gradient d-lg-none"></div>
                                         <div _ngcontent-uuw-c73="" class="slide__texts">
                                             <!---->
                                             <h3 _ngcontent-uuw-c73="" class="slide__subtitle ng-star-inserted"> WIN INSTANTLY NOW </h3>
                                             <!---->
-                                            <div _ngcontent-uuw-c73="" class="slider__enter-btn"><button _ngcontent-uuw-c73="" class="d-flex align-items-center justify-content-center"><span _ngcontent-uuw-c73="">Enter now</span>
+                                            <div _ngcontent-uuw-c73="" class="slider__enter-btn">
+                                                <button _ngcontent-uuw-c73="" class="d-flex align-items-center justify-content-center"><span _ngcontent-uuw-c73="">Enter now</span>
                                                     <svg-icon _ngcontent-uuw-c73="" name="ticket-small" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
                                                             <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
                                                             <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
                                                             <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
                                                             <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                        </svg></svg-icon>
-                                                </button></div>
+                                                        </svg>
+                                                    </svg-icon>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </a>
-                                <!---->
-                            </div><button _ngcontent-uuw-c73="" class="slider__button slider__button_next ng-star-inserted">
-                                <svg-icon _ngcontent-uuw-c73="" name="arrow-left-7-d" class="slider__icon" _nghost-uuw-c61="" role="img"><svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg" class="svg-icon" style="fill: currentcolor;">
+                            </div>
+
+                            <button _ngcontent-uuw-c73="" class="slider__button slider__button_next ng-star-inserted">
+                                <svg-icon _ngcontent-uuw-c73="" name="arrow-left-7-d" class="slider__icon" _nghost-uuw-c61="" role="img">
+                                    <svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg" class="svg-icon" style="fill: currentcolor;">
                                         <path d="M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z"></path>
-                                    </svg></svg-icon>
+                                    </svg>
+                                </svg-icon>
                             </button>
                             <!---->
                         </div>
@@ -7161,10 +7198,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -7213,10 +7250,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -7265,10 +7302,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -7316,10 +7353,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -7367,10 +7404,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -7419,10 +7456,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -7471,10 +7508,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -7522,10 +7559,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -7573,10 +7610,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -7625,10 +7662,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -7677,10 +7714,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -7729,10 +7766,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -7781,10 +7818,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -7833,10 +7870,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -7885,10 +7922,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -7937,10 +7974,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -7992,10 +8029,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -8044,10 +8081,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -8096,10 +8133,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -8148,10 +8185,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -8200,10 +8237,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -8252,10 +8289,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -8304,10 +8341,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -8356,10 +8393,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -8401,10 +8438,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -8453,10 +8490,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -8508,10 +8545,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -8559,10 +8596,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -8610,10 +8647,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -8661,10 +8698,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -8712,10 +8749,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -8764,10 +8801,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -8815,10 +8852,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -8866,10 +8903,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -8917,10 +8954,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -8968,10 +9005,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -9019,10 +9056,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -9070,10 +9107,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -9115,10 +9152,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -9166,10 +9203,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -9217,10 +9254,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -9268,10 +9305,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -9319,10 +9356,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -9370,10 +9407,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -9421,10 +9458,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -9472,10 +9509,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -9527,10 +9564,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -9578,10 +9615,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -9630,10 +9667,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -9682,10 +9719,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -9734,10 +9771,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -9786,10 +9823,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -9838,10 +9875,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -9890,10 +9927,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -9942,10 +9979,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -9994,10 +10031,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -10046,10 +10083,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -10098,10 +10135,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -10150,10 +10187,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -10202,10 +10239,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -10254,10 +10291,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -10306,10 +10343,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -10358,10 +10395,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -10410,10 +10447,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -10462,10 +10499,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -10514,10 +10551,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -10566,10 +10603,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -10618,10 +10655,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -10670,10 +10707,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -10722,10 +10759,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -10774,10 +10811,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -10819,10 +10856,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -10871,10 +10908,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -10923,10 +10960,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -10975,10 +11012,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -11027,10 +11064,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -11079,10 +11116,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -11134,10 +11171,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
@@ -11179,10 +11216,10 @@
                                                     <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
                                                 </svg></svg-icon>
                                             <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#0490E9"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#0490E9"></path>
-                                                    <path fill="#0490E9" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#0490E9"></path>
+                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
+                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
+                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>

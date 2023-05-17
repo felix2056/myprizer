@@ -317,7 +317,7 @@
         }
 
         :root {
-            --swiper-theme-color: #007aff
+            --swiper-theme-color: #f37021
         }
 
         :root {
