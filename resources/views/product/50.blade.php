@@ -7282,7 +7282,8 @@
                                     <div _ngcontent-fqv-c90="" class="product__sold text-left ng-star-inserted"> SOLD: 1% </div>
                                     <div _ngcontent-fqv-c90="" class="product__slider ng-star-inserted">
                                         <nouislider _ngcontent-fqv-c90="" class="m-0 min ng2-nouislider ng-untouched ng-pristine" _nghost-fqv-c46="">
-                                            <div _ngcontent-fqv-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                            <div id="nouislider-2"></div>
+                                            {{-- <div _ngcontent-fqv-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                 <div class="noUi-base">
                                                     <div class="noUi-connects">
                                                         <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.01, 1);"></div>
@@ -7294,9 +7295,9 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </nouislider>
-                                        <div _ngcontent-fqv-c90="" class="product__slider-label"> 33 / 2,999 </div>
+                                        <div _ngcontent-fqv-c90="" id="product__slider-label" class="product__slider-label"> 33 / 2,999 </div>
                                     </div>
                                     <!---->
                                     <!---->
@@ -7406,7 +7407,8 @@
                                                     <h2 _ngcontent-fqv-c90="" class="ng-star-inserted">How many tickets?</h2>
                                                     <div _ngcontent-fqv-c90="" class="ticket__chooser-container ng-star-inserted">
                                                         <nouislider _ngcontent-fqv-c90="" _nghost-fqv-c46="" class="min ng2-nouislider ng-untouched ng-pristine ng-valid">
-                                                            <div _ngcontent-fqv-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr">
+                                                            <div id="nouislider"></div>
+                                                            {{-- <div _ngcontent-fqv-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr">
                                                                 <div class="noUi-base">
                                                                     <div class="noUi-connects">
                                                                         <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.0160643, 1);"></div>
@@ -7418,12 +7420,12 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            </div> --}}
                                                         </nouislider>
                                                     </div>
                                                     <div _ngcontent-fqv-c90="" class="ticket__labels ng-star-inserted"><span _ngcontent-fqv-c90="" class="ticket__label">1</span><span _ngcontent-fqv-c90="" class="ticket__label">250</span></div>
                                                     <div _ngcontent-fqv-c90="" class="ticket__quantities ng-star-inserted"><button _ngcontent-fqv-c90="" class="ticket__quantity">-</button>
-                                                        <h3 _ngcontent-fqv-c90="" class="ticket__total"> Number of tickets: <span _ngcontent-fqv-c90="">5</span></h3><button _ngcontent-fqv-c90="" type="button" class="ticket__quantity">+</button>
+                                                        <h3 _ngcontent-fqv-c90="" id="ticket__total" class="ticket__total"> Number of tickets: <span _ngcontent-fqv-c90="">5</span></h3><button _ngcontent-fqv-c90="" type="button" class="ticket__quantity">+</button>
                                                     </div>
                                                     <!---->
                                                     <!----><button _ngcontent-fqv-c90="" class="ticket__add ng-star-inserted" type="button">
@@ -7727,4 +7729,58 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script>
+    var slider = document.getElementById('nouislider');
+    noUiSlider.create(slider, {
+        start: [20],
+        step: 1,
+        connect: 'lower',
+        tooltips: true,
+        range: {
+            'min': [10],
+            'max': [500]
+        },
+        // format to int
+        format: {
+            to: function (value) {
+                return parseInt(value);
+            },
+            from: function (value) {
+                return parseInt(value);
+            }
+        }
+    });
+
+    slider.noUiSlider.on('update', function (values, handle) {
+        document.getElementById('ticket__total').getElementsByTagName('span')[0].innerHTML = values[handle];
+    });
+
+    var slider_2 = document.getElementById('nouislider-2');
+    noUiSlider.create(slider_2, {
+        start: [2000],
+        step: 1,
+        connect: 'lower',
+        tooltips: true,
+        range: {
+            'min': [1000],
+            'max': [299999]
+        },
+        // format to int
+        format: {
+            to: function (value) {
+                return parseInt(value);
+            },
+            from: function (value) {
+                return parseInt(value);
+            }
+        }
+    });
+
+    // slider_2.noUiSlider.on('update', function (values, handle) {
+    //     document.getElementById('product__slider-label').getElementsByTagName('span')[0].innerHTML = values[handle];
+    // });
+</script>
 @endsection

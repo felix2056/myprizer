@@ -7175,7 +7175,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider increaseRight">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 96 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.96, 1);"></div>
@@ -7187,7 +7188,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7227,7 +7228,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 46 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.46, 1);"></div>
@@ -7239,7 +7241,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7279,7 +7281,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 41 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.41, 1);"></div>
@@ -7291,7 +7294,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7330,7 +7333,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider increaseRight">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 57 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.57, 1);"></div>
@@ -7342,7 +7346,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7381,7 +7385,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 41 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.41, 1);"></div>
@@ -7393,7 +7398,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7433,7 +7438,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 30 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.3, 1);"></div>
@@ -7445,7 +7451,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7485,7 +7491,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 36 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.36, 1);"></div>
@@ -7497,7 +7504,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7536,7 +7543,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 41 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.41, 1);"></div>
@@ -7548,7 +7556,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7587,7 +7595,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 40 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.4, 1);"></div>
@@ -7599,7 +7608,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7639,7 +7648,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 28 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.28, 1);"></div>
@@ -7651,7 +7661,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7691,7 +7701,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 25 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.25, 1);"></div>
@@ -7703,7 +7714,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7743,7 +7754,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 29 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.29, 1);"></div>
@@ -7755,7 +7767,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7795,7 +7807,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 35 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.35, 1);"></div>
@@ -7807,7 +7820,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7847,7 +7860,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 25 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.25, 1);"></div>
@@ -7859,7 +7873,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7899,7 +7913,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 24 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.24, 1);"></div>
@@ -7911,7 +7926,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7951,7 +7966,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider raffle-card__slider--hidden">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 37 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.37, 1);"></div>
@@ -7963,7 +7979,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8006,7 +8022,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider increaseRight">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 96 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.96, 1);"></div>
@@ -8018,7 +8035,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8058,7 +8075,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 46 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.46, 1);"></div>
@@ -8070,7 +8088,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8110,7 +8128,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 41 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.41, 1);"></div>
@@ -8122,7 +8141,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8162,7 +8181,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider raffle-card__slider--hidden">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 37 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.37, 1);"></div>
@@ -8174,7 +8194,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8214,7 +8234,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 23 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.23, 1);"></div>
@@ -8226,7 +8247,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8266,7 +8287,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 15 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.15, 1);"></div>
@@ -8278,7 +8300,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8318,7 +8340,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 18 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.18, 1);"></div>
@@ -8330,7 +8353,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8370,7 +8393,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 17 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.17, 1);"></div>
@@ -8382,7 +8406,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8415,7 +8439,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 23 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.23, 1);"></div>
@@ -8427,7 +8452,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8467,7 +8492,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 4 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.04, 1);"></div>
@@ -8479,7 +8505,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8522,7 +8548,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider increaseRight">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 96 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.96, 1);"></div>
@@ -8534,7 +8561,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8573,7 +8600,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider increaseRight">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 57 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.57, 1);"></div>
@@ -8585,7 +8613,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8624,7 +8652,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 41 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.41, 1);"></div>
@@ -8636,7 +8665,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8675,7 +8704,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 40 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.4, 1);"></div>
@@ -8687,7 +8717,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8726,7 +8756,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 41 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.41, 1);"></div>
@@ -8738,7 +8769,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8778,7 +8809,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider raffle-card__slider--hidden">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 37 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.37, 1);"></div>
@@ -8790,7 +8822,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8829,7 +8861,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 4 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.04, 1);"></div>
@@ -8841,7 +8874,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8880,7 +8913,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 1 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.01, 1);"></div>
@@ -8892,7 +8926,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8931,7 +8965,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 2 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.02, 1);"></div>
@@ -8943,7 +8978,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8982,7 +9017,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 1 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.01, 1);"></div>
@@ -8994,7 +9030,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -9033,7 +9069,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
@@ -9045,7 +9082,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -9084,7 +9121,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
@@ -9096,7 +9134,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -9129,7 +9167,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 23 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.23, 1);"></div>
@@ -9141,7 +9180,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -9180,7 +9219,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 1 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.01, 1);"></div>
@@ -9192,7 +9232,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -9231,7 +9271,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
@@ -9243,7 +9284,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -9282,7 +9323,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
@@ -9294,7 +9336,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -9333,7 +9375,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
@@ -9345,7 +9388,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -9384,7 +9427,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
@@ -9396,7 +9440,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -9435,7 +9479,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
@@ -9447,7 +9492,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -9486,7 +9531,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
@@ -9498,7 +9544,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -9541,7 +9587,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider increaseRight">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 96 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.96, 1);"></div>
@@ -9553,7 +9600,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -9592,7 +9639,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider increaseRight">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 57 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.57, 1);"></div>
@@ -9604,7 +9652,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -9644,7 +9692,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 30 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.3, 1);"></div>
@@ -9656,7 +9705,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -9696,7 +9745,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 36 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.36, 1);"></div>
@@ -9708,7 +9758,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -9748,7 +9798,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 28 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.28, 1);"></div>
@@ -9760,7 +9811,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -9800,7 +9851,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 25 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.25, 1);"></div>
@@ -9812,7 +9864,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -9852,7 +9904,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 29 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.29, 1);"></div>
@@ -9864,7 +9917,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -9904,7 +9957,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 35 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.35, 1);"></div>
@@ -9916,7 +9970,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -9956,7 +10010,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 25 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.25, 1);"></div>
@@ -9968,7 +10023,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -10008,7 +10063,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 24 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.24, 1);"></div>
@@ -10020,7 +10076,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -10060,7 +10116,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider raffle-card__slider--hidden">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 37 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.37, 1);"></div>
@@ -10072,7 +10129,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -10112,7 +10169,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 17 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.17, 1);"></div>
@@ -10124,7 +10182,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -10164,7 +10222,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 3 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.03, 1);"></div>
@@ -10176,7 +10235,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -10216,7 +10275,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 9 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.09, 1);"></div>
@@ -10228,7 +10288,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -10268,7 +10328,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 4 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.04, 1);"></div>
@@ -10280,7 +10341,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -10320,7 +10381,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 8 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.08, 1);"></div>
@@ -10332,7 +10394,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -10372,7 +10434,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 3 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.03, 1);"></div>
@@ -10384,7 +10447,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -10424,7 +10487,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 4 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.04, 1);"></div>
@@ -10436,7 +10500,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -10476,7 +10540,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 3 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.03, 1);"></div>
@@ -10488,7 +10553,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -10528,7 +10593,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 2 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.02, 1);"></div>
@@ -10540,7 +10606,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -10580,7 +10646,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 7 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.07, 1);"></div>
@@ -10592,7 +10659,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -10632,7 +10699,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 7 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.07, 1);"></div>
@@ -10644,7 +10712,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -10684,7 +10752,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 1 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.01, 1);"></div>
@@ -10696,7 +10765,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -10736,7 +10805,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 3 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.03, 1);"></div>
@@ -10748,7 +10818,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -10788,7 +10858,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
@@ -10800,7 +10871,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -10833,7 +10904,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 23 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.23, 1);"></div>
@@ -10845,7 +10917,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -10885,7 +10957,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
@@ -10897,7 +10970,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -10937,7 +11010,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 2 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.02, 1);"></div>
@@ -10949,7 +11023,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -10989,7 +11063,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
@@ -11001,7 +11076,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -11041,7 +11116,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
@@ -11053,7 +11129,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -11093,7 +11169,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 1 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.01, 1);"></div>
@@ -11105,7 +11182,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -11148,7 +11225,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider increaseRight">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 96 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.96, 1);"></div>
@@ -11160,7 +11238,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -11193,7 +11271,8 @@
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 23 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
+                                                <div class="nouislider"></div>
+                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
                                                     <div class="noUi-base">
                                                         <div class="noUi-connects">
                                                             <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.23, 1);"></div>
@@ -11205,7 +11284,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -11628,4 +11707,31 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script>
+    var sliders = document.getElementsByClassName('nouislider');
+    for (var i = 0; i < sliders.length; i++) {
+        noUiSlider.create(sliders[i], {
+            start: [Math.floor(Math.random() * 100) + 1],
+            step: 1,
+            connect: 'lower',
+            tooltips: false,
+            range: {
+                'min': [10],
+                'max': [500]
+            },
+            // format to int
+            format: {
+                to: function (value) {
+                    return parseInt(value);
+                },
+                from: function (value) {
+                    return parseInt(value);
+                }
+            }
+        });
+    }
+</script>
 @endsection

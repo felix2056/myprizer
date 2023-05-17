@@ -7202,3 +7202,57 @@
     </div>
 </div>
 @endsection
+
+@section('scripts')
+<script>
+    var slider = document.getElementById('nouislider');
+    noUiSlider.create(slider, {
+        start: [20],
+        step: 1,
+        connect: 'lower',
+        tooltips: true,
+        range: {
+            'min': [10],
+            'max': [500]
+        },
+        // format to int
+        format: {
+            to: function (value) {
+                return parseInt(value);
+            },
+            from: function (value) {
+                return parseInt(value);
+            }
+        }
+    });
+
+    slider.noUiSlider.on('update', function (values, handle) {
+        document.getElementById('ticket__total').getElementsByTagName('span')[0].innerHTML = values[handle];
+    });
+
+    var slider_2 = document.getElementById('nouislider-2');
+    noUiSlider.create(slider_2, {
+        start: [2000],
+        step: 1,
+        connect: 'lower',
+        tooltips: true,
+        range: {
+            'min': [1000],
+            'max': [299999]
+        },
+        // format to int
+        format: {
+            to: function (value) {
+                return parseInt(value);
+            },
+            from: function (value) {
+                return parseInt(value);
+            }
+        }
+    });
+
+    // slider_2.noUiSlider.on('update', function (values, handle) {
+    //     document.getElementById('product__slider-label').getElementsByTagName('span')[0].innerHTML = values[handle];
+    // });
+</script>
+@endsection
