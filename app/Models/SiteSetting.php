@@ -114,16 +114,16 @@ class SiteSetting extends Model
 
     public function getSiteHeaderLogoAttribute()
     {
-        return config('app.admin_url') . '/storage/logo/' . $this->attributes['site_header_logo'];
+        return config('app.admin_url') . '/storage/' . $this->attributes['site_header_logo'];
     }
 
     public function getSiteFooterLogoAttribute()
     {
-        return config('app.admin_url') . '/storage/logo/' . $this->attributes['site_footer_logo'];
+        return config('app.admin_url') . '/storage/' . $this->attributes['site_footer_logo'];
     }
 
     public function getSiteFaviconAttribute()
     {
-        return config('app.admin_url') . '/storage/logo/' . $this->attributes['site_favicon'];
+        return config('app.admin_url') . '/storage/' . $this->attributes['site_favicon'];
     }
 }
