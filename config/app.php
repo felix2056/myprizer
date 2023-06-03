@@ -54,7 +54,8 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://myprizer.com'),
+    'admin_url' => env('APP_ADMIN_URL', 'https://admin.myprizer.com'),
 
     'asset_url' => env('ASSET_URL'),
 
