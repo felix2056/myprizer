@@ -8,9 +8,15 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
+
+use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Activitylog\LogOptions;
+
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, LogsActivity;
 
     /**
      * The attributes that are mass assignable.
@@ -18,9 +24,21 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
+        'phone',
+        'gender',
+        'address1',
+        'address2',
+        'city',
+        'state',
+        'postcode',
+        'country',
         'password',
+        'dob_day',
+        'dob_month',
+        'dob_year'
     ];
 
     /**
@@ -41,4 +59,66 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class);
+    }
+
+    /**
+     * Get the options for generating the slug.
+    */
+    // public function getSlugOptions() : SlugOptions
+    // {
+    //     return SlugOptions::create()
+    //         ->generateSlugsFrom(['first_name', 'last_name'])
+    //         ->saveSlugsTo('slug')
+    //         ->doNotGenerateSlugsOnUpdate()
+    //         ->usingSeparator('_');
+    // }
+
+    /**
+     * Get the user's full name.
+     *
+     * @return string
+     */
+    public function getFullNameAttribute(): string
+    {
+        return "{$this->first_name} {$this->last_name}";
+    }
+
+    public function getPhotoUrlAttribute(): string
+    {
+        $background = '09DCA4';
+
+        // if id number is odd, then 15558D
+        if ($this->attributes['id'] % 2 == 0) $background = '15558D';
+
+        return 'https://ui-avatars.com/api/?name=' . urlencode($this->full_name) . '&background=' . $background . '&color=fff&size=128'; 
+    }
+
+    private function get_real_ip()
+    {
+        $realIP = '52.27.234.7'; // Default to server IP
+
+        if (!empty($_SERVER['HTTP_CLIENT_IP'])) //check ip from shared internet
+            $realIP = $_SERVER['HTTP_CLIENT_IP'];
+        
+        elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) //to check ip is passed by a proxy
+            $realIP = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        
+        else
+            $realIP = $_SERVER['REMOTE_ADDR'];
+        
+        return $realIP;
+    }
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+        // ->logOnly(['name', 'text']);
+        ->logAll();
+        // ->logOnlyDirty();
+        // Chain fluent methods for configuration options
+    }
 }

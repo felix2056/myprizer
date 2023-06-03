@@ -1,9 +1,13 @@
+@php
+$site_settings = \App\Models\SiteSetting::first();
+@endphp
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>7days Performance</title>
+    <title>{{ $site_settings->site_name }}</title>
     <meta name="description" content="7days Performance">
 
     <link rel="stylesheet" href="https://7daysperformance.co.uk/app/fontawesome/css/font-awesome.min.css">

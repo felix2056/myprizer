@@ -150,28 +150,74 @@
 
 </body>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 <script>
-    // add click event to all buttons with class .ticket__add
-    document.querySelectorAll('.ticket__add').forEach(item => {
-        item.addEventListener('click', event => {
-            let product_title = document.querySelector('.product__title').innerHTML;
-            let product_price = document.querySelector('.product__price').innerHTML;
-            let product_image = document.querySelector('.product-gallery__img').src;
+    window.addEventListener('load', () => {
+        // update cart items
+        updateCartItems();
+        
+        // add click event to all buttons with class .ticket__add
+        document.querySelectorAll('.ticket__add').forEach(button => {
+            button.addEventListener('click', event => {
+                let product_id = document.querySelector('.product__id').innerHTML;
+                let product_title = document.querySelector('.product__title').innerHTML;
+                let product_slug = document.querySelector('.product__slug').innerHTML;
+                let product_price = document.querySelector('.product__price_unformatted').innerHTML;
+                let product_image = document.querySelector('.product-gallery__img').src;
+                let ticket_total = document.querySelector('.ticket__total').getElementsByTagName('span')[0].innerHTML;
 
-            // add product to cart
-            let cart = {
-                product_title: product_title,
-                product_price: product_price,
-                product_image: product_image
-            };
+                product_total = (product_price * ticket_total).toFixed(2); 
 
-            // save cart to local storage
-            localStorage.setItem('cart', JSON.stringify(cart));
+                // add product to cart
+                let cart = {
+                    product_id: product_id,
+                    product_title: product_title,
+                    product_slug: product_slug,
+                    product_price: product_price,
+                    product_image: product_image,
+                    ticket_total: ticket_total,
+                    product_total: product_total
+                };
 
-            // redirect to checkout page
-            window.location.href = '/checkout';
-        })
-    });      
+                // append product to cart
+                if (localStorage.getItem('cart') === null) {
+                    localStorage.setItem('cart', '[]');
+                }
+
+                let cart_items = JSON.parse(localStorage.getItem('cart'));
+
+                let exists = cart_items.find(item => item.product_id === cart.product_id);
+                if (exists) {
+                    // remove existing item from local storage
+                    cart_items = cart_items.filter(item => item.product_id !== cart.product_id);
+                }
+
+                cart_items.push(cart);
+                localStorage.setItem('cart', JSON.stringify(cart_items));
+
+                // update cart count
+                let cart_count = document.querySelector('.cart__count');
+                cart_count.innerHTML = cart_items.length;
+
+                // show success message
+                toastr.success('Product added to cart successfully!', 'Success Alert', {timeOut: 5000});
+            })
+        });
+    });
+
+    function updateCartItems() {
+        if (localStorage.getItem('cart') === null) {
+            localStorage.setItem('cart', '[]');
+        }
+
+        let cart_items = JSON.parse(localStorage.getItem('cart'));
+
+        // update cart count
+        let cart_count = document.querySelector('.cart__count');
+        cart_count.innerHTML = cart_items.length;
+    }
 </script>
 
 <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>

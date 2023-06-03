@@ -1,34 +1,38 @@
+@php
+$site_settings = \App\Models\SiteSetting::first();
+@endphp
+
 @extends('layouts.app')
 
 @section('head')
 <head>
     <meta charset="utf-8">
-    <title>7days Performance</title>
-    <meta name="description" content="Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!">
+    <title>{{ $site_settings->site_name }}</title>
+    <meta name="description" content="{{ $site_settings->site_description ?? 'Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!' }}">
     <meta property="fb:app_id" content="">
     <meta name="apple-itunes-app" content="app-id=1455876956">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="7days Performance">
-    <meta name="og:description" content="Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!">
-    <meta property="og:site_name" content="7days Performance">
+    <meta property="og:title" content="{{ $site_settings->site_name }}">
+    <meta name="og:description" content="{{ $site_settings->site_description ?? 'Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!' }}">
+    <meta property="og:site_name" content="{{ $site_settings->site_name }}">
     <meta property="og:locale" content="en_GB">
-    <meta property="og:url" content="https://7daysperformance.co.uk">
+    <meta property="og:url" content="{{ $site_settings->site_url }}">
     <meta property="og:image" content="https://7daysperformance.co.uk/assets/images/preview-website-image.png">
     <meta property="og:image:width" content="1024">
     <meta property="og:image:height" content="500">
 
-    <meta name="twitter:title" content="7days Performance">
-    <meta name="twitter:description" content="Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!">
+    <meta name="twitter:title" content="{{ $site_settings->site_name }}">
+    <meta name="twitter:description" content="{{ $site_settings->site_description ?? 'Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!' }}">
     <meta name="twitter:widgets:theme" content="light">
     <meta name="twitter:widgets:link-color" content="#55acee">
     <meta name="twitter:widgets:border-color" content="#55acee">
     <meta name="twitter:card" content="summary">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="keywords" content="7days Performance, gambling, Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!">
-    <meta name="url" content="https://7daysperformance.co.uk">
-    <meta name="identifier-URL" content="https://7daysperformance.co.uk">
+    <meta name="keywords" content="{{ $site_settings->site_name }}, gambling, Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!">
+    <meta name="url" content="{{ $site_settings->site_url }}">
+    <meta name="identifier-URL" content="{{ $site_settings->site_url }}">
 
 
     <script async="true" src="https://tr.snapchat.com/config/uk/99063123-9f29-4600-8544-5a98bcd92c2c.js" crossorigin="anonymous"></script>
@@ -1104,40 +1108,9 @@
 
     </style>
 
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon2-350x350.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon2-350x350.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="/assets/icons/favicon2-350x350.png">
+    <link rel="icon" type="image/png" href="{{ $site_settings->site_favicon ?? '/assets/icons/favicon2-350x350.png' }}">
 
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime()
-                , event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0]
-                , j = d.createElement(s)
-                , dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.defer = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-TMGDNV3');
-
-    </script>
-    <!-- End Google Tag Manager -->
+    
     <style>
         @charset "UTF-8";
 
@@ -1175,7 +1148,7 @@
     </style>
     <link rel="stylesheet" href="styles.8c1c0d7361d8e666.css" media="all" onload="this.media='all'"><noscript>
         <link rel="stylesheet" href="styles.8c1c0d7361d8e666.css"></noscript>
-    <style type="text/css"></style>
+    
     <style>
         .current-competitions__section[_ngcontent-hpj-c79] {
             padding-top: 20px;
@@ -5351,8 +5324,7 @@
         }
 
     </style>
-    <meta name="og:title" content="7days Performance">
-    <meta name="og:image" content="">
+    
     <style>
         @-webkit-keyframes rotate {
             0% {
@@ -9559,6 +9531,8 @@
                     
                     <form _ngcontent-hpj-c131="" novalidate="" class="ng-tns-c131-24 ng-untouched ng-pristine ng-valid" method="POST">
                         @csrf
+                        <input type="hidden" name="cart" id="cart_input">
+
                         <div _ngcontent-hpj-c131="" class="container container-cart ng-tns-c131-24">
                             <!---->
                             <div _ngcontent-hpj-c131="" class="checkout ng-tns-c131-24">
@@ -10128,7 +10102,7 @@
                                         </div>
                                         <!---->
                                     </div>
-                                    <!---->
+
                                     <div _ngcontent-hpj-c131="" class="checkout-form__group ng-tns-c131-24 ng-star-inserted">
                                         <label _ngcontent-hpj-c131="" for="email" class="checkout-form__label ng-tns-c131-24"> Email address <abbr _ngcontent-hpj-c131="" title="required" class="checkout-form__abbr ng-tns-c131-24">*</abbr></label>
                                         <input _ngcontent-hpj-c131="" name="email" id="email" inputmode="email" type="email" formcontrolname="email" fixonchange="" class="checkout-form__input ng-tns-c131-24 ng-untouched ng-pristine ng-valid" required autocomplete="email" value="{{ old('email') }}">
@@ -10146,30 +10120,47 @@
                                     <table _ngcontent-hpj-c131="" class="checkout-order__table ng-tns-c131-24">
                                         <tr _ngcontent-hpj-c131="" class="ng-tns-c131-24">
                                             <th _ngcontent-hpj-c131="" class="checkout-order__table-cell ng-tns-c131-24"><strong _ngcontent-hpj-c131="" class="checkout-order__text-bold ng-tns-c131-24">Product</strong></th>
-                                            <th _ngcontent-hpj-c131="" class="checkout-order__table-cell ng-tns-c131-24"><strong _ngcontent-hpj-c131="" class="checkout-order__text-bold ng-tns-c131-24">Subtotal</strong></th>
+                                            {{-- <th _ngcontent-hpj-c131="" class="checkout-order__table-cell ng-tns-c131-24"><strong _ngcontent-hpj-c131="" class="checkout-order__text-bold ng-tns-c131-24">Subtotal</strong></th> --}}
                                         </tr>
-                                        <tr _ngcontent-hpj-c131="" class="ng-tns-c131-24 ng-star-inserted">
-                                            <td _ngcontent-hpj-c131="" class="checkout-order__table-cell ng-tns-c131-24">
-                                                <p _ngcontent-hpj-c131="" class="checkout-order__text ng-tns-c131-24"><span id="product_title">Win This BMW M2 Competition + £1,000 Cash!</span> <strong _ngcontent-hpj-c131="" class="checkout-order__text-bold ng-tns-c131-24">× 1</strong></p>
-                                                <p _ngcontent-hpj-c131="" class="checkout-order__text ng-tns-c131-24 ng-star-inserted"><strong _ngcontent-hpj-c131="" class="checkout-order__text-bold ng-tns-c131-24">Answer:</strong> 350z</p>
-                                                <!---->
+                                        <tr _ngcontent-hpj-c131="" class="cart-table ng-tns-c131-24 ng-star-inserted">
+                                            {{-- <td _ngcontent-hpj-c131="" class="checkout-order__table-cell ng-tns-c131-24">
+                                                <p _ngcontent-hpj-c131="" class="checkout-order__text ng-tns-c131-24">
+                                                    <span>Win This BMW M2 Competition + £1,000 Cash!</span> 
+                                                    <strong _ngcontent-hpj-c131="" class="checkout-order__text-bold ng-tns-c131-24">× 1</strong>
+                                                </p>
+
+                                                <p _ngcontent-hpj-c131="" class="checkout-order__text ng-tns-c131-24 ng-star-inserted">
+                                                    <strong _ngcontent-hpj-c131="" class="checkout-order__text-bold ng-tns-c131-24">Answer:</strong> 350z
+                                                </p>
                                             </td>
-                                            <td _ngcontent-hpj-c131="" class="checkout-order__table-cell ng-tns-c131-24"><strong _ngcontent-hpj-c131="" class="checkout-order__text-bold ng-tns-c131-24"><span id="product_price">£9.90</span></strong></td>
+                                            <td _ngcontent-hpj-c131="" class="checkout-order__table-cell ng-tns-c131-24">
+                                                <strong _ngcontent-hpj-c131="" class="checkout-order__text-bold ng-tns-c131-24">
+                                                    <span id="product_price">£9.90</span>
+                                                </strong>
+                                            </td> --}}
                                         </tr>
-                                        <!---->
-                                        <!---->
-                                        <!---->
+
                                         <tr _ngcontent-hpj-c131="" class="ng-tns-c131-24">
-                                            <td _ngcontent-hpj-c131="" class="checkout-order__table-cell ng-tns-c131-24"><strong _ngcontent-hpj-c131="" class="checkout-order__text-bold ng-tns-c131-24">Subtotal</strong></td>
-                                            <td _ngcontent-hpj-c131="" class="checkout-order__table-cell ng-tns-c131-24"><strong _ngcontent-hpj-c131="" class="checkout-order__text-bold ng-tns-c131-24"><span id="sub_total">£9.90</span></strong></td>
+                                            <td _ngcontent-hpj-c131="" class="checkout-order__table-cell ng-tns-c131-24">
+                                                <strong _ngcontent-hpj-c131="" class="checkout-order__text-bold ng-tns-c131-24">Subtotal</strong>
+                                            </td>
+                                            <td _ngcontent-hpj-c131="" class="checkout-order__table-cell ng-tns-c131-24">
+                                                <strong _ngcontent-hpj-c131="" class="checkout-order__text-bold ng-tns-c131-24">
+                                                    <span id="sub_total">£9.90</span>
+                                                </strong>
+                                            </td>
                                         </tr>
-                                        <!---->
-                                        <!---->
+
                                         <tr _ngcontent-hpj-c131="" class="ng-tns-c131-24">
-                                            <td _ngcontent-hpj-c131="" class="checkout-order__table-cell ng-tns-c131-24"><strong _ngcontent-hpj-c131="" class="checkout-order__text-bold ng-tns-c131-24">Total</strong></td>
-                                            <td _ngcontent-hpj-c131="" class="checkout-order__table-cell ng-tns-c131-24"><strong _ngcontent-hpj-c131="" class="checkout-order__text-bold ng-tns-c131-24">£9.90</strong></td>
+                                            <td _ngcontent-hpj-c131="" class="checkout-order__table-cell ng-tns-c131-24">
+                                                <strong _ngcontent-hpj-c131="" class="checkout-order__text-bold ng-tns-c131-24">Total</strong>
+                                            </td>
+                                            <td _ngcontent-hpj-c131="" class="checkout-order__table-cell ng-tns-c131-24">
+                                                <strong _ngcontent-hpj-c131="" id="total" class="checkout-order__text-bold ng-tns-c131-24">£9.90</strong>
+                                            </td>
                                         </tr>
                                     </table>
+
                                     <div _ngcontent-hpj-c131="" class="checkout-order__panel-list ng-tns-c131-24 ng-star-inserted">
                                         <div _ngcontent-hpj-c131="" class="checkout-order__panel ng-tns-c131-24 ng-star-inserted">
                                             <div _ngcontent-hpj-c131="" class="ng-tns-c131-24"> Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a _ngcontent-hpj-c131="" href="/cookie-and-privacy-policy" target="_blank" class="checkout-order__link ng-tns-c131-24">privacy policy</a>. </div>
@@ -10256,17 +10247,28 @@
                                                 <div _ngcontent-hpj-c130="" class="checkout-form__group"><label _ngcontent-hpj-c130="" for="expire-date" class="checkout-form__label"> Expire Date <abbr _ngcontent-hpj-c130="" title="required" class="checkout-form__abbr">*</abbr></label><input _ngcontent-hpj-c130="" id="expire-date" formcontrolname="cardDate" inputmode="numeric" type="text" placeholder="MM / YY" autocomplete="cc-exp" class="checkout-form__input ng-untouched ng-pristine ng-invalid">
                                                     <!---->
                                                 </div>
-                                                <div _ngcontent-hpj-c130="" class="checkout-form__group"><label _ngcontent-hpj-c130="" for="security-code" class="checkout-form__label"> Security code <abbr _ngcontent-hpj-c130="" title="required" class="checkout-form__abbr">*</abbr><span _ngcontent-hpj-c130="" class="checkout-form__question"><span _ngcontent-hpj-c130="">
-                                                                <svg-icon _ngcontent-hpj-c130="" name="question" _nghost-hpj-c61="" role="img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: currentcolor;">
+
+                                                <div _ngcontent-hpj-c130="" class="checkout-form__group">
+                                                    <label _ngcontent-hpj-c130="" for="security-code" class="checkout-form__label"> Security code 
+                                                        <abbr _ngcontent-hpj-c130="" title="required" class="checkout-form__abbr">*</abbr>
+                                                        <span _ngcontent-hpj-c130="" class="checkout-form__question">
+                                                            <span _ngcontent-hpj-c130="">
+                                                                <svg-icon _ngcontent-hpj-c130="" name="question" _nghost-hpj-c61="" role="img">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill: currentcolor;">
                                                                         <circle cx="256" cy="378.5" r="25"></circle>
                                                                         <path d="M256 0C114.516 0 0 114.497 0 256c0 141.484 114.497 256 256 256 141.484 0 256-114.497 256-256C512 114.516 397.503 0 256 0zm0 472c-119.377 0-216-96.607-216-216 0-119.377 96.607-216 216-216 119.377 0 216 96.607 216 216 0 119.377-96.607 216-216 216z"></path>
                                                                         <path d="M256 128.5c-44.112 0-80 35.888-80 80 0 11.046 8.954 20 20 20s20-8.954 20-20c0-22.056 17.944-40 40-40s40 17.944 40 40-17.944 40-40 40c-11.046 0-20 8.954-20 20v50c0 11.046 8.954 20 20 20s20-8.954 20-20v-32.531c34.466-8.903 60-40.26 60-77.469 0-44.112-35.888-80-80-80z"></path>
-                                                                    </svg></svg-icon>
+                                                                    </svg>
+                                                                </svg-icon>
                                                             </span>
-                                                            <div _ngcontent-hpj-c130="" class="checkout-form__hint"><img _ngcontent-hpj-c130="" src="/assets/images/cvv-explanation.jpg" alt="cvv explanation"></div>
-                                                        </span></label><input _ngcontent-hpj-c130="" id="security-code" inputmode="numeric" formcontrolname="securityCode" type="text" maxlength="4" autocomplete="cc-csc" class="checkout-form__input ng-untouched ng-pristine ng-invalid">
-                                                    <!---->
+                                                            <div _ngcontent-hpj-c130="" class="checkout-form__hint">
+                                                                <img _ngcontent-hpj-c130="" src="/assets/images/cvv-explanation.jpg" alt="cvv explanation">
+                                                            </div>
+                                                        </span>
+                                                    </label>
+                                                    <input _ngcontent-hpj-c130="" id="security-code" inputmode="numeric" formcontrolname="securityCode" type="text" maxlength="4" autocomplete="cc-csc" class="checkout-form__input ng-untouched ng-pristine ng-invalid">
                                                 </div>
+
                                                 <div _ngcontent-hpj-c130="" class="checkout-form__group ng-star-inserted"><label _ngcontent-hpj-c130="" class="checkout-form__label"></label>
                                                     <div _ngcontent-hpj-c130="" class="checkout-order__save-info"><input _ngcontent-hpj-c130="" type="checkbox" id="save-info" formcontrolname="saveCard" class="ng-untouched ng-pristine ng-invalid"><label _ngcontent-hpj-c130="" for="save-info" class="checkout-order__text checkout-order__text_sm"> Save payment information to my account for future purchases * </label>
                                                         <!---->
@@ -10314,8 +10316,8 @@
                             </div>
                             <div _ngcontent-hpj-c64="" class="footer__social">
                                 <div _ngcontent-hpj-c64="">
-                                    <p _ngcontent-hpj-c64=""><a _ngcontent-hpj-c64="" href="mailto:hello@7daysperformance.co.uk" class="footer__social-email">hello@7daysperformance.co.uk</a></p>
-                                    <p _ngcontent-hpj-c64="" class="footer__annotation--light"> 7days Performance - Technology and Marketing powered by <a _ngcontent-hpj-c64="" href="https://7dayslabs.co.uk/" target="_blank" class="footer__annotation--light"><u _ngcontent-hpj-c64="">7days Labs</u></a></p>
+                                    <p _ngcontent-hpj-c64=""><a _ngcontent-hpj-c64="" href="mailto:hello@myprizer.com" class="footer__social-email">hello@myprizer.com</a></p>
+                                    <p _ngcontent-hpj-c64="" class="footer__annotation--light"> {{ $site_settings->site_name }} - Technology and Marketing powered by <a _ngcontent-hpj-c64="" href="https://7dayslabs.co.uk/" target="_blank" class="footer__annotation--light"><u _ngcontent-hpj-c64="">7days Labs</u></a></p>
                                     <p _ngcontent-hpj-c64="" class="footer__annotation--light">© All rights reserved</p>
                                 </div>
                                 <ul _ngcontent-hpj-c64="">
@@ -10356,13 +10358,85 @@
             // get cart from local storage
             let cart = localStorage.getItem('cart');
             cart = JSON.parse(cart);
-            
-            let product_title = document.querySelector('#product_title');
-            let product_price = document.querySelector('#product_price');
-            let sub_total = document.querySelector('#sub_total');
 
-            product_title.innerHTML = cart.product_title;
-            product_price.innerHTML = cart.product_price;
+            let cartTable = document.querySelector('.cart-table');
+            
+            let cart_sub_total = document.querySelector('#sub_total');
+            let cart_total = document.querySelector('#total');
+            let total = 0;
+
+            // loop through cart items
+            cart.forEach(function(item) {
+                // <td _ngcontent-hpj-c131="" class="checkout-order__table-cell ng-tns-c131-24">
+                //     <p _ngcontent-hpj-c131="" class="checkout-order__text ng-tns-c131-24">
+                //         <span>Win This BMW M2 Competition + £1,000 Cash!</span> 
+                //         <strong _ngcontent-hpj-c131="" class="checkout-order__text-bold ng-tns-c131-24">× 1</strong>
+                //     </p>
+
+                //     <p _ngcontent-hpj-c131="" class="checkout-order__text ng-tns-c131-24 ng-star-inserted">
+                //         <strong _ngcontent-hpj-c131="" class="checkout-order__text-bold ng-tns-c131-24">Answer:</strong> 350z
+                //     </p>
+                // </td>
+                // <td _ngcontent-hpj-c131="" class="checkout-order__table-cell ng-tns-c131-24">
+                //     <strong _ngcontent-hpj-c131="" class="checkout-order__text-bold ng-tns-c131-24">
+                //         <span id="product_price">£9.90</span>
+                //     </strong>
+                // </td>
+
+                let table_cell = document.createElement('td');
+                table_cell.setAttribute('class', 'checkout-order__table-cell ng-tns-c131-24');
+
+                let table_cell_p = document.createElement('p');
+                table_cell_p.setAttribute('class', 'checkout-order__text ng-tns-c131-24');
+
+                let table_cell_p_span = document.createElement('span');
+                table_cell_p_span.innerHTML = item.product_title;
+
+                let table_cell_p_strong = document.createElement('strong');
+                table_cell_p_strong.setAttribute('class', 'checkout-order__text-bold ng-tns-c131-24');
+                table_cell_p_strong.innerHTML = '× ' + item.ticket_total;
+
+                let table_cell_p_answer = document.createElement('p');
+                table_cell_p_answer.setAttribute('class', 'checkout-order__text ng-tns-c131-24 ng-star-inserted');
+
+                let table_cell_p_answer_strong = document.createElement('strong');
+                table_cell_p_answer_strong.setAttribute('class', 'checkout-order__text-bold ng-tns-c131-24');
+                table_cell_p_answer_strong.innerHTML = 'Answer: ';
+
+                let table_cell_p_answer_span = document.createElement('span');
+                table_cell_p_answer_span.innerHTML = item.answer ?? 'N/A';
+
+                let table_cell_price = document.createElement('td');
+                table_cell_price.setAttribute('class', 'checkout-order__table-cell ng-tns-c131-24');
+
+                let table_cell_price_strong = document.createElement('strong');
+                table_cell_price_strong.setAttribute('class', 'checkout-order__text-bold ng-tns-c131-24');
+
+                let table_cell_price_span = document.createElement('span');
+                table_cell_price_span.innerHTML = "{{ $site_settings->site_currency_sym }}" + (parseFloat(item.product_price) * parseFloat(item.ticket_total)).toFixed(2);
+
+                table_cell_p.appendChild(table_cell_p_span);
+                table_cell_p.appendChild(table_cell_p_strong);
+
+                table_cell_p_answer.appendChild(table_cell_p_answer_strong);
+                table_cell_p_answer.appendChild(table_cell_p_answer_span);
+
+                table_cell_price_strong.appendChild(table_cell_price_span);
+                table_cell_price.appendChild(table_cell_price_strong);
+
+                table_cell.appendChild(table_cell_p);
+                table_cell.appendChild(table_cell_p_answer);
+                table_cell.appendChild(table_cell_price);
+
+                cartTable.appendChild(table_cell);
+
+                total += parseFloat(item.product_price) * parseFloat(item.ticket_total);
+            });
+
+            cart_sub_total.innerHTML = "{{ $site_settings->site_currency_sym }}" + total.toFixed(2);
+            cart_total.innerHTML = "{{ $site_settings->site_currency_sym }}" + total.toFixed(2);
+
+            document.getElementById('cart_input').value = JSON.stringify(cart);
         }
     </script>
 @endsection

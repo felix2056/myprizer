@@ -1,34 +1,38 @@
+@php
+$site_settings = \App\Models\SiteSetting::first();
+@endphp
+
 @extends('layouts.app')
 
 @section('head')
 <head>
     <meta charset="utf-8">
-    <title>7days Performance</title>
-    <meta name="description" content="Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!">
+    <title>{{ $site_settings->site_name }}</title>
+    <meta name="description" content="{{ $site_settings->site_description ?? 'Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!' }}">
     <meta property="fb:app_id" content="">
     <meta name="apple-itunes-app" content="app-id=1455876956">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="7days Performance">
-    <meta name="og:description" content="Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!">
-    <meta property="og:site_name" content="7days Performance">
+    <meta property="og:title" content="{{ $site_settings->site_name }}">
+    <meta name="og:description" content="{{ $site_settings->site_description ?? 'Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!' }}">
+    <meta property="og:site_name" content="{{ $site_settings->site_name }}">
     <meta property="og:locale" content="en_GB">
-    <meta property="og:url" content="https://7daysperformance.co.uk">
+    <meta property="og:url" content="{{ $site_settings->site_url }}">
     <meta property="og:image" content="https://7daysperformance.co.uk/assets/images/preview-website-image.png">
     <meta property="og:image:width" content="1024">
     <meta property="og:image:height" content="500">
 
-    <meta name="twitter:title" content="7days Performance">
-    <meta name="twitter:description" content="Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!">
+    <meta name="twitter:title" content="{{ $site_settings->site_name }}">
+    <meta name="twitter:description" content="{{ $site_settings->site_description ?? 'Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!' }}">
     <meta name="twitter:widgets:theme" content="light">
     <meta name="twitter:widgets:link-color" content="#55acee">
     <meta name="twitter:widgets:border-color" content="#55acee">
     <meta name="twitter:card" content="summary">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="keywords" content="7days Performance, gambling, Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!">
-    <meta name="url" content="https://7daysperformance.co.uk">
-    <meta name="identifier-URL" content="https://7daysperformance.co.uk">
+    <meta name="keywords" content="{{ $site_settings->site_name }}, gambling, Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!">
+    <meta name="url" content="{{ $site_settings->site_url }}">
+    <meta name="identifier-URL" content="{{ $site_settings->site_url }}">
 
 
     <script async="true" src="https://tr.snapchat.com/config/uk/99063123-9f29-4600-8544-5a98bcd92c2c.js" crossorigin="anonymous"></script>
@@ -43,9 +47,10 @@
     <script src="/assets/js/elmahio.min.js?apiKey=1eb0422955ae4641859f93f0e30ab4c4&amp;logId=66938de3-706b-4699-bb54-0f8ce932b98f" type="text/javascript"></script>
     <script src="https://www.googleoptimize.com/optimize.js?id=OPT-THKDQV3" async=""></script>
 
-    <link rel="stylesheet" type="text/css" href="/assets/js/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="/assets/js/owl-carousel/owl.carousel.css"/>
-    <link rel="stylesheet" type="text/css" href="/assets/js/owl-carousel/owl.theme.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/js/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/js/owl-carousel/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/js/owl-carousel/owl.theme.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 
     <base href="/">
 
@@ -1107,40 +1112,8 @@
 
     </style>
 
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon2-350x350.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon2-350x350.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="/assets/icons/favicon2-350x350.png">
+    <link rel="icon" type="image/png" href="{{ $site_settings->site_favicon ?? '/assets/icons/favicon2-350x350.png' }}">
 
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime()
-                , event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0]
-                , j = d.createElement(s)
-                , dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.defer = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-TMGDNV3');
-
-    </script>
-    <!-- End Google Tag Manager -->
     <style>
         @charset "UTF-8";
 
@@ -1176,9 +1149,10 @@
         }
 
     </style>
+
     <link rel="stylesheet" href="styles.8c1c0d7361d8e666.css" media="all" onload="this.media='all'"><noscript>
         <link rel="stylesheet" href="styles.8c1c0d7361d8e666.css"></noscript>
-    <style type="text/css"></style>
+
     <style>
         @-webkit-keyframes rotate {
             0% {
@@ -1943,11 +1917,25 @@
             }
         }
 
-        .slider__wrapper{ height: 100%; }
-        .owl-carousel .owl-wrapper-outer { height: 100%; }
-        .owl-wrapper { height: 100%; }
-        .owl-item { height: 100%; }
-        .owl-carousel .owl-item img { height: 100%; }
+        .slider__wrapper {
+            height: 100%;
+        }
+
+        .owl-carousel .owl-wrapper-outer {
+            height: 100%;
+        }
+
+        .owl-wrapper {
+            height: 100%;
+        }
+
+        .owl-item {
+            height: 100%;
+        }
+
+        .owl-carousel .owl-item img {
+            height: 100%;
+        }
 
         .slide[_ngcontent-uuw-c73] {
             text-decoration: none;
@@ -5923,8 +5911,7 @@
         }
 
     </style>
-    <meta name="og:title" content="7days Performance">
-    <meta name="og:image" content="">
+
     <style>
         @-webkit-keyframes rotate {
             0% {
@@ -6760,11 +6747,17 @@
                                     <li _ngcontent-uuw-c63="" class="main-nav__item"><a _ngcontent-uuw-c63="" routerlink="/competition-winners/featured" title="" class="main-nav__link" href="/competition-winners/featured">Winners</a></li>
                                     <li _ngcontent-uuw-c63="" class="main-nav__item"><a _ngcontent-uuw-c63="" routerlink="/draw-results" title="" class="main-nav__link" href="/draw-results">Draw Results</a></li>
                                     <li _ngcontent-uuw-c63="" class="main-nav__item"><a _ngcontent-uuw-c63="" routerlink="/faq" title="" class="main-nav__link" href="/faq">FAQ</a></li>
-                                </ul><button _ngcontent-uuw-c63="" class="header__button header__button_sm nav-button">
+                                </ul>
+                                <button _ngcontent-uuw-c63="" class="header__button header__button_sm nav-button">
                                     <svg-icon _ngcontent-uuw-c63="" name="hamburger-new" class="nav-button__icon nav-button__icon_hamburger" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="fill: currentcolor;">
                                             <path d="M19.167 9.166H.833a.833.833 0 100 1.667h18.334a.833.833 0 000-1.667zM19.167 3.334H.833a.833.833 0 000 1.667h18.334a.833.833 0 000-1.667zM19.167 15H.833a.833.833 0 100 1.667h18.334a.833.833 0 000-1.667z" fill="#00131F"></path>
-                                        </svg></svg-icon>
-                                </button><a _ngcontent-uuw-c63="" routerlink="/cart" class="header__button nav-button" href="/cart"><span _ngcontent-uuw-c63="" class="nav-button__label ng-star-inserted">0</span>
+                                        </svg>
+                                    </svg-icon>
+                                </button>
+                                
+                                <a _ngcontent-uuw-c63="" routerlink="/cart" class="header__button nav-button" href="/cart">
+                                    <span _ngcontent-uuw-c63="" class="cart__count nav-button__label ng-star-inserted">0</span>
+
                                     <!---->
                                     <!---->
                                     <svg-icon _ngcontent-uuw-c63="" name="cart-new" class="nav-button__icon nav-button__icon_shopping-cart" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="fill: currentcolor;">
@@ -6836,11 +6829,11 @@
                         <!---->
                     </div>
                 </app-header>
-                
+
                 <app-top-availability-message _ngcontent-uuw-c76="" _nghost-uuw-c66="">
                     <!---->
                 </app-top-availability-message>
-                
+
                 <app-home-slider _ngcontent-uuw-c76="" autoplaytimer="8000" _nghost-uuw-c73="">
                     <section _ngcontent-uuw-c73="" class="hero-slider ng-star-inserted">
                         <div _ngcontent-uuw-c73="" class="slider">
@@ -7160,18 +7153,18 @@
                         <div _ngcontent-uuw-c76="" class="container-wide homepage-container">
                             <h2 _ngcontent-uuw-c76="" class="section__header">Upcoming competitions</h2>
                             <div _ngcontent-uuw-c76="" class="row justify-content-center">
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white raffle-card__today" href="/product/instant-win-17">
+                                @foreach (App\Models\Prize::orderBy('created_at', 'DESC')->limit(15)->get() as $prize)
+                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted">
+                                    <a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white raffle-card__today" href="{{ route('product.show', $prize->slug) }}">
                                         <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/34/52bf71dae05b5f4ee7e7b3462199ee9767ad4d20.jpg" alt="undefined" title="1,250 Instant Wins - £200,000 Of Prizes - £10,000 End Prize!">
-                                            <!---->
-                                            <!---->
+                                            <img _ngcontent-uuw-c65="" src="{{ $prize->image }}" alt="{{ $prize->title }}" title="{{ $prize->title }}">
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> 1,250 Instant Wins - £200,000 Of Prizes - £10,000 End Prize! </h3>
+                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title">{{ $prize->title }}</h3>
                                             <!---->
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
+                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">{{ $prize->ticket_price_formatted }}</span></div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider increaseRight">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 96 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
@@ -7203,10 +7196,14 @@
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
                                                     <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
                                                     <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
+                                                </svg>
+                                            </svg-icon>
                                         </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white raffle-card__today" href="/product/win-g80-m3-comp-1000cash">
+                                    </a>
+                                </app-raffle-card>
+                                @endforeach
+                                
+                                {{-- <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white raffle-card__today" href="/product/win-g80-m3-comp-1000cash">
                                         <div _ngcontent-uuw-c65="" class="raffle-card__image">
                                             <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/34/7534fe50f051b142d55dc91fb5adffdea0bf90e5.jpg" alt="undefined" title="Win This BMW G80 M3 Competition + £1,000 Cash!">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__drawtime raffle-card__drawtime--urgent ng-star-inserted"> Draw Today 8pm </div>
@@ -7229,19 +7226,7 @@
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 46 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
                                                 <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.46, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-54%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="46.0" aria-valuetext="46">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">46</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
+                                                
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7282,19 +7267,6 @@
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 41 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
                                                 <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.41, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-59%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="41.0" aria-valuetext="41">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">41</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7334,19 +7306,6 @@
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 57 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
                                                 <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.57, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-43%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="57.0" aria-valuetext="57">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">57</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7386,19 +7345,6 @@
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 41 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
                                                 <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.41, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-59%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="41.0" aria-valuetext="41">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">41</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7439,19 +7385,7 @@
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 30 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
                                                 <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.3, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-70%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="30.0" aria-valuetext="30">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">30</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
+                                                
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7492,19 +7426,6 @@
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 36 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
                                                 <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.36, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-64%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="36.0" aria-valuetext="36">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">36</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7544,19 +7465,6 @@
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 41 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
                                                 <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.41, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-59%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="41.0" aria-valuetext="41">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">41</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7596,19 +7504,6 @@
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 40 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
                                                 <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.4, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-60%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="40.0" aria-valuetext="40">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">40</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7649,19 +7544,6 @@
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 28 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
                                                 <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.28, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-72%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="28.0" aria-valuetext="28">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">28</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7702,19 +7584,6 @@
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 25 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
                                                 <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.25, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-75%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="25.0" aria-valuetext="25">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">25</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7755,19 +7624,6 @@
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 29 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
                                                 <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.29, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-71%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="29.0" aria-valuetext="29">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">29</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7808,19 +7664,6 @@
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 35 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
                                                 <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.35, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-65%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="35.0" aria-valuetext="35">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">35</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7861,19 +7704,6 @@
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 25 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
                                                 <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.25, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-75%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="25.0" aria-valuetext="25">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">25</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7914,19 +7744,6 @@
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 24 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
                                                 <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.24, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-76%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="24.0" aria-valuetext="24">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">24</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -7944,7 +7761,7 @@
                                                 </svg></svg-icon>
                                         </div>
                                     </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white raffle-card__today" href="/product/win-100-cash-doubled-if-your-order-is-over-1-7">
+                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white raffle-card__today" href="/product/win-100-cash-doubled-if-your-order-is-over-1-7"> --}}
                                         <div _ngcontent-uuw-c65="" class="raffle-card__image">
                                             <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/29/e631b4735b7a99175754a46df9765cd0c558fd11.jpg" alt="undefined" title="Win £100 Cash (Doubled If Your Order Is Over £1)">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__drawtime raffle-card__drawtime--urgent ng-star-inserted"> Draw Today 8pm </div>
@@ -7967,19 +7784,6 @@
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 37 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
                                                 <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.37, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-63%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="37.0" aria-valuetext="37">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">37</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8003,39 +7807,28 @@
                     </section>
                     <!---->
                     <!---->
+
+                    @foreach(App\Models\Category::all() as $category)
                     <section _ngcontent-uuw-c76="" class="section section_cards section_white ng-star-inserted" id="cars-competitions">
                         <div _ngcontent-uuw-c76="" class="container-wide homepage-container">
-                            <h2 _ngcontent-uuw-c76="" class="section__header"> Car &amp; Bike Competitions</h2>
+                            <h2 _ngcontent-uuw-c76="" class="section__header"> {{ $category->name }}</h2>
                             <div _ngcontent-uuw-c76="" class="row justify-content-center">
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card-- raffle-card__today" href="/product/instant-win-17">
+                                @foreach ($category->prizes()->orderBy('created_at', 'DESC')->limit(15)->get() as $prize)
+                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted">
+                                    <a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white raffle-card__today" href="{{ route('product.show', $prize->slug) }}">
                                         <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/34/52bf71dae05b5f4ee7e7b3462199ee9767ad4d20.jpg" alt="undefined" title="1,250 Instant Wins - £200,000 Of Prizes - £10,000 End Prize!">
-                                            <!---->
-                                            <!---->
+                                            <img _ngcontent-uuw-c65="" src="{{ $prize->image }}" alt="{{ $prize->title }}" title="{{ $prize->title }}">
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> 1,250 Instant Wins - £200,000 Of Prizes - £10,000 End Prize! </h3>
+                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title">{{ $prize->title }}</h3>
                                             <!---->
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
+                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">{{ $prize->ticket_price_formatted }}</span></div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__slider increaseRight">
                                             <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 96 % </div>
                                             <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
                                                 <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.96, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-4%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="96.0" aria-valuetext="96">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">96</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
                                             </nouislider>
                                         </div>
                                         <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
@@ -8050,3266 +7843,18 @@
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
                                                     <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
                                                     <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
+                                                </svg>
+                                            </svg-icon>
                                         </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card-- raffle-card__today" href="/product/win-g80-m3-comp-1000cash">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/34/7534fe50f051b142d55dc91fb5adffdea0bf90e5.jpg" alt="undefined" title="Win This BMW G80 M3 Competition + £1,000 Cash!">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime raffle-card__drawtime--urgent ng-star-inserted"> Draw Today 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win This BMW G80 M3 Competition + £1,000 Cash! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £52,000 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 46 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.46, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-54%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="46.0" aria-valuetext="46">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">46</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card-- raffle-card__today" href="/product/win-ford-ranger-wildtrak-1000cash">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/34/d0c7239d0face9aef62289d74b9fab7e2ade965e.jpg" alt="undefined" title="Win This Ford Ranger Wildtrak + £1,000 Cash!">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime raffle-card__drawtime--urgent ng-star-inserted"> Draw Today 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win This Ford Ranger Wildtrak + £1,000 Cash! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £20,000 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 41 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.41, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-59%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="41.0" aria-valuetext="41">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">41</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card-- raffle-card__today" href="/product/win-100-cash-doubled-if-your-order-is-over-1-7">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/29/e631b4735b7a99175754a46df9765cd0c558fd11.jpg" alt="undefined" title="Win £100 Cash (Doubled If Your Order Is Over £1)">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime raffle-card__drawtime--urgent ng-star-inserted"> Draw Today 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__bottominfo ng-star-inserted">App Exclusive</div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win £100 Cash (Doubled If Your Order Is Over £1) </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.00</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider raffle-card__slider--hidden">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 37 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.37, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-63%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="37.0" aria-valuetext="37">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">37</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-urban-defender-2000cash">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/34/8f53b8c2e02175569800f9d3b3fa105023517309.jpg" alt="undefined" title="Win This 2021 V8 Urban Defender + £2,000 Cash!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Sunday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win This 2021 V8 Urban Defender + £2,000 Cash! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £90,000 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 23 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.23, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-77%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="23.0" aria-valuetext="23">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">23</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-stage-2-m4-comp-1000cash">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/34/421628f99cdd29ce7729238e8bd5468bff09ec50.jpg" alt="undefined" title="Win This Stage 2 BMW M4 Competition + £1,000 Cash!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Sunday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win This Stage 2 BMW M4 Competition + £1,000 Cash! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £28,000 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 15 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.15, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-85%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="15.0" aria-valuetext="15">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">15</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-2020-ktm-supermoto-690-smcr">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/34/8ba0d96393542229f2c5db2acf0321b835365b15.jpg" alt="undefined" title="Win This 2020 KTM Supermoto 690 SMC R!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Sunday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win This 2020 KTM Supermoto 690 SMC R! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £6,000 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 18 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.18, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-82%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="18.0" aria-valuetext="18">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">18</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-sur-ron-lbx">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/32/7ca4accda4b880dc6f23de8e535fef4dcd5c00c7.jpg" alt="undefined" title="Win This Road Legal Sur Ron LBX Electric Bike!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Sunday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win This Road Legal Sur Ron LBX Electric Bike! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £3,500 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 17 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.17, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-83%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="17.0" aria-valuetext="17">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">17</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/instant-win-18">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/34/3b02edf7bb8b0f64eafbb89785a0c5d6648c2f89.jpg" alt="undefined" title="1,250 Instant Wins - £200,000 Of Prizes - £10,000 End Prize!">
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> 1,250 Instant Wins - £200,000 Of Prizes - £10,000 End Prize! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 23 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.23, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-77%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="23.0" aria-valuetext="23">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">23</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-m2-competition-1000cash">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/34/c1af37bdbd039444d79f7bb910b47357b3582143.jpg" alt="undefined" title="Win This BMW M2 Competition + £1,000 Cash!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Wednesday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win This BMW M2 Competition + £1,000 Cash! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £30,000 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 4 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.04, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-96%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="4.0" aria-valuetext="4">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">4</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <!---->
+                                    </a>
+                                </app-raffle-card>
+                                @endforeach
                             </div>
                         </div>
                     </section>
-                    <!---->
-                    <!---->
-                    <section _ngcontent-uuw-c76="" class="section section_cards ng-star-inserted section_gray" id="cash-competitions">
-                        <div _ngcontent-uuw-c76="" class="container-wide homepage-container">
-                            <h2 _ngcontent-uuw-c76="" class="section__header">Cash Competitions</h2>
-                            <div _ngcontent-uuw-c76="" class="row justify-content-center">
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white raffle-card__today" href="/product/instant-win-17">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/34/52bf71dae05b5f4ee7e7b3462199ee9767ad4d20.jpg" alt="undefined" title="1,250 Instant Wins - £200,000 Of Prizes - £10,000 End Prize!">
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> 1,250 Instant Wins - £200,000 Of Prizes - £10,000 End Prize! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider increaseRight">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 96 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.96, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-4%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="96.0" aria-valuetext="96">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">96</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white raffle-card__today" href="/product/win-30-000-tax-free-cash">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/32/1374a84c13133db1fcc610c5ed8ce0869979eb68.jpg" alt="undefined" title="Win £30,000 Tax Free Cash!">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime raffle-card__drawtime--urgent ng-star-inserted"> Draw Today 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win £30,000 Tax Free Cash! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£1.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider increaseRight">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 57 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.57, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-43%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="57.0" aria-valuetext="57">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">57</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white raffle-card__today" href="/product/win-5-000-tax-free-cash-54">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/31/7e60213ff103e7e4c8915c407e04b2c439cca934.jpg" alt="undefined" title="Win £5,000 Tax Free Cash #54!">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime raffle-card__drawtime--urgent ng-star-inserted"> Draw Today 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win £5,000 Tax Free Cash #54! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 41 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.41, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-59%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="41.0" aria-valuetext="41">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">41</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white raffle-card__today" href="/product/win-1-000-tax-free-cash-72">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/31/a76f5c6d921fb6273df6b70233d62c7fd8022e23.jpg" alt="undefined" title="Win £1,000 Tax Free Cash #72!">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime raffle-card__drawtime--urgent ng-star-inserted"> Draw Today 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win £1,000 Tax Free Cash #72! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.79</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 40 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.4, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-60%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="40.0" aria-valuetext="40">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">40</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white raffle-card__today" href="/product/win-1-000-tax-free-cash-71">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/31/a76f5c6d921fb6273df6b70233d62c7fd8022e23.jpg" alt="undefined" title="Win £1,000 Tax Free Cash #71!">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime raffle-card__drawtime--urgent ng-star-inserted"> Draw Today 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win £1,000 Tax Free Cash #71! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.79</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 41 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.41, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-59%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="41.0" aria-valuetext="41">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">41</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white raffle-card__today" href="/product/win-100-cash-doubled-if-your-order-is-over-1-7">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/29/e631b4735b7a99175754a46df9765cd0c558fd11.jpg" alt="undefined" title="Win £100 Cash (Doubled If Your Order Is Over £1)">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime raffle-card__drawtime--urgent ng-star-inserted"> Draw Today 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__bottominfo ng-star-inserted">App Exclusive</div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win £100 Cash (Doubled If Your Order Is Over £1) </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.00</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider raffle-card__slider--hidden">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 37 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.37, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-63%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="37.0" aria-valuetext="37">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">37</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white" href="/product/win-20-000-cash-6">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/33/de71daf363368e1e889b81b4ff7c0d1461bc8c92.jpg" alt="undefined" title="Win £20,000 Cash #6!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Sunday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win £20,000 Cash #6! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 4 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.04, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-96%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="4.0" aria-valuetext="4">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">4</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white" href="/product/win-5-000-tax-free-cash-55">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/31/7e60213ff103e7e4c8915c407e04b2c439cca934.jpg" alt="undefined" title="Win £5,000 Tax Free Cash #55!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Sunday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win £5,000 Tax Free Cash #55! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 1 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.01, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-99%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="1.0" aria-valuetext="1">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">1</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white" href="/product/win-1-000-tax-free-cash-74">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/31/a76f5c6d921fb6273df6b70233d62c7fd8022e23.jpg" alt="undefined" title="Win £1,000 Tax Free Cash #74!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Sunday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win £1,000 Tax Free Cash #74! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.79</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 2 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.02, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-98%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="2.0" aria-valuetext="2">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">2</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white" href="/product/win-1-000-tax-free-cash-73">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/31/a76f5c6d921fb6273df6b70233d62c7fd8022e23.jpg" alt="undefined" title="Win £1,000 Tax Free Cash #73!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Sunday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win £1,000 Tax Free Cash #73! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.79</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 1 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.01, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-99%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="1.0" aria-valuetext="1">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">1</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white" href="/product/win-1-500-tax-free-cash-42">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/31/f690e9e5a215779b34044c08572b8f8e84b5f2d5.jpg" alt="undefined" title="Win £1,500 Tax Free Cash #42!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Monday 5pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win £1,500 Tax Free Cash #42! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-100%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="0.0" aria-valuetext="0">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">0</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white" href="/product/win-1-500-tax-free-cash-41">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/31/f690e9e5a215779b34044c08572b8f8e84b5f2d5.jpg" alt="undefined" title="Win £1,500 Tax Free Cash #41!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Monday 5pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win £1,500 Tax Free Cash #41! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-100%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="0.0" aria-valuetext="0">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">0</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white" href="/product/instant-win-18">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/34/3b02edf7bb8b0f64eafbb89785a0c5d6648c2f89.jpg" alt="undefined" title="1,250 Instant Wins - £200,000 Of Prizes - £10,000 End Prize!">
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> 1,250 Instant Wins - £200,000 Of Prizes - £10,000 End Prize! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 23 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.23, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-77%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="23.0" aria-valuetext="23">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">23</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white" href="/product/win-7-500-tax-free-cash-19">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/26/03ca2b89fd1af111c6f519aa05d804fd8425b908.jpg" alt="undefined" title="Win £7,500 Tax Free Cash #19!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Tuesday 5pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win £7,500 Tax Free Cash #19! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 1 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.01, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-99%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="1.0" aria-valuetext="1">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">1</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white" href="/product/win-1-000-tax-free-cash-76">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/31/a76f5c6d921fb6273df6b70233d62c7fd8022e23.jpg" alt="undefined" title="Win £1,000 Tax Free Cash #76!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Tuesday 5pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win £1,000 Tax Free Cash #76! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.79</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-100%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="0.0" aria-valuetext="0">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">0</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white" href="/product/win-1-000-tax-free-cash-75">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/31/a76f5c6d921fb6273df6b70233d62c7fd8022e23.jpg" alt="undefined" title="Win £1,000 Tax Free Cash #75!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Tuesday 5pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win £1,000 Tax Free Cash #75! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.79</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-100%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="0.0" aria-valuetext="0">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">0</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white" href="/product/win-20-000-cash-7">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/33/a25e7b219d099b15bd1d04050ba8ee14f3fd1e99.jpg" alt="undefined" title="Win £20,000 Cash #7!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Wednesday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win £20,000 Cash #7! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.79</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-100%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="0.0" aria-valuetext="0">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">0</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white" href="/product/win-5-000-tax-free-cash-56">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/31/7e60213ff103e7e4c8915c407e04b2c439cca934.jpg" alt="undefined" title="Win £5,000 Tax Free Cash #56!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Wednesday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win £5,000 Tax Free Cash #56! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-100%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="0.0" aria-valuetext="0">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">0</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white" href="/product/win-1-000-tax-free-cash-78">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/31/a76f5c6d921fb6273df6b70233d62c7fd8022e23.jpg" alt="undefined" title="Win £1,000 Tax Free Cash #78!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Wednesday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win £1,000 Tax Free Cash #78! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.79</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-100%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="0.0" aria-valuetext="0">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">0</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white" href="/product/win-1-000-tax-free-cash-77">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/31/a76f5c6d921fb6273df6b70233d62c7fd8022e23.jpg" alt="undefined" title="Win £1,000 Tax Free Cash #77!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Wednesday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win £1,000 Tax Free Cash #77! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.79</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-100%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="0.0" aria-valuetext="0">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">0</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <!---->
-                            </div>
-                        </div>
-                    </section>
-                    <!---->
-                    <!---->
-                    <section _ngcontent-uuw-c76="" class="section section_cards section_white ng-star-inserted" id="tech-competitions">
-                        <div _ngcontent-uuw-c76="" class="container-wide homepage-container">
-                            <h2 _ngcontent-uuw-c76="" class="section__header">Tech &amp; Luxury Competitions</h2>
-                            <div _ngcontent-uuw-c76="" class="row justify-content-center">
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card-- raffle-card__today" href="/product/instant-win-17">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/34/52bf71dae05b5f4ee7e7b3462199ee9767ad4d20.jpg" alt="undefined" title="1,250 Instant Wins - £200,000 Of Prizes - £10,000 End Prize!">
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> 1,250 Instant Wins - £200,000 Of Prizes - £10,000 End Prize! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider increaseRight">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 96 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.96, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-4%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="96.0" aria-valuetext="96">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">96</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card-- raffle-card__today" href="/product/win-30-000-tax-free-cash">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/32/1374a84c13133db1fcc610c5ed8ce0869979eb68.jpg" alt="undefined" title="Win £30,000 Tax Free Cash!">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime raffle-card__drawtime--urgent ng-star-inserted"> Draw Today 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win £30,000 Tax Free Cash! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£1.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider increaseRight">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 57 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.57, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-43%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="57.0" aria-valuetext="57">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">57</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card-- raffle-card__today" href="/product/win-this-dyson-beauty-bundle-3">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/24/06fc602cc23cc659ad83cd7fe434de636abe0653.jpg" alt="undefined" title="Win This Dyson Beauty Bundle!">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime raffle-card__drawtime--urgent ng-star-inserted"> Draw Today 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win This Dyson Beauty Bundle! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £1,250 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 30 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.3, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-70%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="30.0" aria-valuetext="30">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">30</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card-- raffle-card__today" href="/product/win-an-iphone-14-pro-or-pro-max-39">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/33/b7cd663c4ac89842c031a8eb1216833b9ed154a3.jpg" alt="undefined" title="Win An iPhone 14 Pro Or Pro Max #39!">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime raffle-card__drawtime--urgent ng-star-inserted"> Draw Today 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win An iPhone 14 Pro Or Pro Max #39! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £1,000 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 36 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.36, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-64%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="36.0" aria-valuetext="36">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">36</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card-- raffle-card__today" href="/product/win-a-dji-mavic-air-2-fly-more-combo-3">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/17/7db2ea3e7089dbaf9843e4fb0669f04eb4dd7a27.jpg" alt="undefined" title="Win A DJI Mavic Air 2 Fly More Combo!">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime raffle-card__drawtime--urgent ng-star-inserted"> Draw Today 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win A DJI Mavic Air 2 Fly More Combo! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £850 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 28 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.28, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-72%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="28.0" aria-valuetext="28">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">28</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card-- raffle-card__today" href="/product/win-an-ipad-pro-11">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/34/29bc6e55da9a812b5fc9848f1815b8644dfaeba5.jpg" alt="undefined" title="Win An iPad Pro 11&quot;!">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime raffle-card__drawtime--urgent ng-star-inserted"> Draw Today 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win An iPad Pro 11"! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £800 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 25 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.25, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-75%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="25.0" aria-valuetext="25">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">25</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card-- raffle-card__today" href="/product/win-a-pure-air-pro-electric-scooter-2nd-gen-3">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/24/2da864f2d7e78f3c719e7728e4f32fbce71277d6.jpg" alt="undefined" title="Win A Pure Air Pro Electric Scooter 2nd Gen!">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime raffle-card__drawtime--urgent ng-star-inserted"> Draw Today 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win A Pure Air Pro Electric Scooter 2nd Gen! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £400 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 29 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.29, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-71%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="29.0" aria-valuetext="29">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">29</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card-- raffle-card__today" href="/product/win-this-ps5-disc-edition-5">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/33/93e8cdf663b73af54e55f2e4027b557969e56241.jpg" alt="undefined" title="Win This PS5 Disc Edition #5!">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime raffle-card__drawtime--urgent ng-star-inserted"> Draw Today 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win This PS5 Disc Edition #5! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £400 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 35 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.35, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-65%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="35.0" aria-valuetext="35">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">35</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card-- raffle-card__today" href="/product/win-an-xbox-series-x-5">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/33/774ecb60b4ee27e22833043a4e6b8cef3c55d5b4.jpg" alt="undefined" title="Win An Xbox Series X #5!">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime raffle-card__drawtime--urgent ng-star-inserted"> Draw Today 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win An Xbox Series X #5! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £400 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 25 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.25, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-75%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="25.0" aria-valuetext="25">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">25</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card-- raffle-card__today" href="/product/win-an-ooni-pizza-oven-3">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/25/090e7bab0744cd22e5627bd13d3c6de399775ebb.jpg" alt="undefined" title="Win An Ooni Pizza Oven!">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime raffle-card__drawtime--urgent ng-star-inserted"> Draw Today 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win An Ooni Pizza Oven! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £400 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 24 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.24, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-76%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="24.0" aria-valuetext="24">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">24</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card-- raffle-card__today" href="/product/win-100-cash-doubled-if-your-order-is-over-1-7">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/29/e631b4735b7a99175754a46df9765cd0c558fd11.jpg" alt="undefined" title="Win £100 Cash (Doubled If Your Order Is Over £1)">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime raffle-card__drawtime--urgent ng-star-inserted"> Draw Today 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__bottominfo ng-star-inserted">App Exclusive</div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win £100 Cash (Doubled If Your Order Is Over £1) </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.00</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider raffle-card__slider--hidden">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 37 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.37, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-63%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="37.0" aria-valuetext="37">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">37</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-pepsi-rolex-gmt-master-ii">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/34/ddd1c3e9457ac5224ccdbf23ae594512242f8ddb.jpg" alt="undefined" title="Win This Rolex Pepsi GMT Master II!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Sunday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win This Rolex Pepsi GMT Master II! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £14,000 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 17 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.17, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-83%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="17.0" aria-valuetext="17">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">17</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-this-smart-home-entertainment-bundle">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/26/8ca3e4415b2bd2ec3134b445636edb66e1655362.jpg" alt="undefined" title="Win This Smart Home Entertainment Bundle!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Sunday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win This Smart Home Entertainment Bundle! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £1,750 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 3 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.03, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-97%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="3.0" aria-valuetext="3">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">3</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-this-11pc-dewalt-tool-bundle-4">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/25/0732ca415013bfae0aa64bb780898995d78ebbdc.jpg" alt="undefined" title="Win This 11pc DeWALT Tool Bundle!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Sunday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win This 11pc DeWALT Tool Bundle! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £1,400 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 9 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.09, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-91%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="9.0" aria-valuetext="9">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">9</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-a-louis-vuitton-alma-bb-bag-reversible-belt-3">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/25/f0ba6d17fc66f505f3a6dfd5abd6e809a1782b79.jpg" alt="undefined" title="Win A Louis Vuitton Alma BB Bag + Reversible Belt!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Sunday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win A Louis Vuitton Alma BB Bag + Reversible Belt! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £1,250 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 4 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.04, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-96%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="4.0" aria-valuetext="4">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">4</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-an-apple-imac-4-5k-24-3">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/26/6c0ffdbb543d5319e18425055efc297662ac1a1c.png" alt="undefined" title="Win An Apple iMac 4.5K 24&quot;!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Sunday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win An Apple iMac 4.5K 24"! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £1,000 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 8 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.08, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-92%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="8.0" aria-valuetext="8">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">8</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-an-iphone-14-pro-or-pro-max-40">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/33/3d8fb280aa887f6e148cba91c779aa714203c306.jpg" alt="undefined" title="Win An iPhone 14 Pro Or Pro Max #40!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Sunday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win An iPhone 14 Pro Or Pro Max #40! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £1,000 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 3 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.03, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-97%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="3.0" aria-valuetext="3">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">3</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-a-samsung-75-4k-smart-tv-2">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/31/8c2fca11921485e823d31ebfb6219f611443ce51.jpg" alt="undefined" title="Win A Samsung 75&quot; 4K SMART TV!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Sunday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win A Samsung 75" 4K SMART TV! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £800 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 4 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.04, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-96%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="4.0" aria-valuetext="4">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">4</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-this-ps5-disc-edition-5-2">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/33/56923dc037eca7a07fcdc6ca7de2c6003f141626.jpg" alt="undefined" title="Win This PS5 Disc Edition #6!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Sunday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win This PS5 Disc Edition #6! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £400 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 3 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.03, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-97%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="3.0" aria-valuetext="3">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">3</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-an-xbox-series-x-6">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/33/1e61bba40800e7da75060a7907f1ce9195859ff4.jpg" alt="undefined" title="Win An Xbox Series X #6!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Sunday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win An Xbox Series X #6! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £400 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 2 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.02, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-98%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="2.0" aria-valuetext="2">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">2</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-a-samsung-galaxy-s23-ultra-8">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/31/05eb115246e404f1ba514781c2e6119c2bddc449.jpg" alt="undefined" title="Win A Samsung Galaxy S23 Ultra #8!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Monday 5pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win A Samsung Galaxy S23 Ultra #8! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £1,000 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 7 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.07, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-93%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="7.0" aria-valuetext="7">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">7</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-this-us-pro-tools-55-chest-tools-2">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/26/8b91df400e03ab59409d5abec407a34a74371b76.jpg" alt="undefined" title="Win This US PRO TOOLS 55” Chest + Tools!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Monday 5pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win This US PRO TOOLS 55” Chest + Tools! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £850 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 7 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.07, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-93%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="7.0" aria-valuetext="7">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">7</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-this-ps5-disc-edition-7">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/33/39bb02bd75114a7faba9fbe237bc965f76a9ca64.jpg" alt="undefined" title="Win This PS5 Disc Edition #7!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Monday 5pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win This PS5 Disc Edition #7! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £400 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 1 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.01, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-99%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="1.0" aria-valuetext="1">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">1</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-this-oculus-quest-2-vr-256gb-4">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/25/d2ceb95b78e0f9ffe637a12ce467d87f4daaca21.jpg" alt="undefined" title="Win This Oculus Quest 2 VR 256GB!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Monday 5pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win This Oculus Quest 2 VR 256GB! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £400 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 3 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.03, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-97%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="3.0" aria-valuetext="3">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">3</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-an-xbox-series-x-7">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/33/1ea11348c0d750fa5344b6c7aa3c4873b406ab07.jpg" alt="undefined" title="Win An Xbox Series X #7!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Monday 5pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win An Xbox Series X #7! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £400 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-100%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="0.0" aria-valuetext="0">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">0</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/instant-win-18">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/34/3b02edf7bb8b0f64eafbb89785a0c5d6648c2f89.jpg" alt="undefined" title="1,250 Instant Wins - £200,000 Of Prizes - £10,000 End Prize!">
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> 1,250 Instant Wins - £200,000 Of Prizes - £10,000 End Prize! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 23 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.23, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-77%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="23.0" aria-valuetext="23">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">23</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-this-huge-85-4k-smart-tv-3">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/25/525a9632669bb099e693808715dc1991769eddab.jpg" alt="undefined" title="Win This Huge 85&quot; 4K SMART TV!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Wednesday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win This Huge 85" 4K SMART TV! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £1,400 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-100%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="0.0" aria-valuetext="0">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">0</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-a-tag-heuer-f1-watch-of-your-choice-for-99p-3">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/25/d58990546db331b985b9f9142d8ed9722d3efb79.jpg" alt="undefined" title="Win A Tag Heuer F1 Watch Of Your Choice For 99p!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Wednesday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win A Tag Heuer F1 Watch Of Your Choice For 99p! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £1,300 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 2 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.02, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-98%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="2.0" aria-valuetext="2">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">2</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-an-iphone-14-pro-or-pro-max-41">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/33/0a687a5188a7d9df0a05f90234227ede838eb835.jpg" alt="undefined" title="Win An iPhone 14 Pro Or Pro Max #41!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Wednesday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win An iPhone 14 Pro Or Pro Max #41! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £1,000 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-100%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="0.0" aria-valuetext="0">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">0</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-this-ps5-disc-edition-8">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/33/3fbb65c0ff8264df258f3331935b339068f466cd.jpg" alt="undefined" title="Win This PS5 Disc Edition #8!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Wednesday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win This PS5 Disc Edition #8! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £400 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 0 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-100%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="0.0" aria-valuetext="0">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">0</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--" href="/product/win-an-xbox-series-x-8">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/33/4ecd8a1989754336092075fb3436268854140e21.jpg" alt="undefined" title="Win An Xbox Series X #8!">
-                                            <!---->
-                                            <!---->
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__drawtime ng-star-inserted"> Draw Wednesday 8pm </div>
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> Win An Xbox Series X #8! </h3>
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__alternative ng-star-inserted"> Cash Alternative: £400 </div>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 1 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.01, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-99%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="1.0" aria-valuetext="1">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">1</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <!---->
-                            </div>
-                        </div>
-                    </section>
-                    <!---->
-                    <!---->
-                    <section _ngcontent-uuw-c76="" class="section section_cards ng-star-inserted section_gray" id="instant-wins">
-                        <div _ngcontent-uuw-c76="" class="container-wide homepage-container">
-                            <h2 _ngcontent-uuw-c76="" class="section__header">Instant Win Competitions</h2>
-                            <div _ngcontent-uuw-c76="" class="row justify-content-center">
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white raffle-card__today" href="/product/instant-win-17">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/34/52bf71dae05b5f4ee7e7b3462199ee9767ad4d20.jpg" alt="undefined" title="1,250 Instant Wins - £200,000 Of Prizes - £10,000 End Prize!">
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> 1,250 Instant Wins - £200,000 Of Prizes - £10,000 End Prize! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider increaseRight">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 96 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.96, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-4%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="96.0" aria-valuetext="96">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">96</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <app-raffle-card _ngcontent-uuw-c76="" _nghost-uuw-c65="" class="ng-star-inserted"><a _ngcontent-uuw-c65="" class="raffle-card raffle-card--white" href="/product/instant-win-18">
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__image">
-                                            <!----><img _ngcontent-uuw-c65="" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/34/3b02edf7bb8b0f64eafbb89785a0c5d6648c2f89.jpg" alt="undefined" title="1,250 Instant Wins - £200,000 Of Prizes - £10,000 End Prize!">
-                                            <!---->
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__wrapper">
-                                            <h3 _ngcontent-uuw-c65="" class="raffle-card__title"> 1,250 Instant Wins - £200,000 Of Prizes - £10,000 End Prize! </h3>
-                                            <!---->
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__price">
-                                            <!----><span _ngcontent-uuw-c65="" class="raffle-card__price-new">£0.99</span></div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__slider">
-                                            <div _ngcontent-uuw-c65="" class="raffle-card__sold"> sold: 23 % </div>
-                                            <nouislider _ngcontent-uuw-c65="" _nghost-uuw-c46="" class="ng2-nouislider ng-untouched ng-pristine">
-                                                <div class="nouislider"></div>
-                                                {{-- <div _ngcontent-uuw-c46="" class="noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr" disabled="true">
-                                                    <div class="noUi-base">
-                                                        <div class="noUi-connects">
-                                                            <div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.23, 1);"></div>
-                                                        </div>
-                                                        <div class="noUi-origin" style="transform: translate(-77%, 0px); z-index: 4;">
-                                                            <div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="23.0" aria-valuetext="23">
-                                                                <div class="noUi-touch-area"></div>
-                                                                <div class="noUi-tooltip">23</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                            </nouislider>
-                                        </div>
-                                        <div _ngcontent-uuw-c65="" class="raffle-card__enter"><span _ngcontent-uuw-c65="">Enter now</span>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small" class="raffle-card__enter-icon raffle-card__enter-icon--white" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" style="fill: currentcolor;">
-                                                    <path d="M12.761 6.59a.736.736 0 01-.597-.852l.574-3.256a.736.736 0 111.45.255l-.574 3.257a.736.736 0 01-.853.597zm-1.34-1.914a.736.736 0 01.255-1.45l3.256.574a.736.736 0 01-.255 1.45l-3.257-.574z" fill="#fff"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.085 2.245l-3.898-.687a3.337 3.337 0 00-3.861 2.704l-1.62 9.191a3.337 3.337 0 002.703 3.862l5.252.926a3.338 3.338 0 003.862-2.704l1.36-7.718a4.224 4.224 0 01-1.307-.26l-1.366 7.747a2 2 0 01-2.317 1.622l-1.97-.347.116-.657a.667.667 0 10-1.313-.231l-.116.656-1.97-.347a2 2 0 01-1.622-2.317L3.64 4.493a2 2 0 012.317-1.622l3.892.687a4.217 4.217 0 01.237-1.313zM9.313 13.42a.667.667 0 00-.266-1.203l-3.94-.694a.666.666 0 10-.231 1.313l3.94.695a.667.667 0 00.497-.11z" fill="#fff"></path>
-                                                    <path fill="#fff" d="M7.253 5.823l1.35.238-.776 4.397-1.35-.238z"></path>
-                                                    <path d="M10.47 6.854a.666.666 0 00-.266-1.203l-3.94-.694a.667.667 0 10-.23 1.313l3.938.694a.667.667 0 00.498-.11z" fill="#fff"></path>
-                                                </svg></svg-icon>
-                                            <svg-icon _ngcontent-uuw-c65="" name="ticket-small-blue" class="raffle-card__enter-icon raffle-card__enter-icon--blue" _nghost-uuw-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 22" style="fill: currentcolor;">
-                                                    <path d="M17.077 6.739a.92.92 0 01-.746-1.066l.717-4.07a.92.92 0 111.812.319l-.717 4.07a.92.92 0 01-1.066.747zM15.4 4.344a.92.92 0 11.32-1.812l4.07.718a.92.92 0 01-.319 1.812l-4.07-.718z" fill="#f37022"></path>
-                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.732 1.307L8.86.447a4.172 4.172 0 00-4.827 3.38l-2.026 11.49a4.172 4.172 0 003.38 4.827l6.565 1.158a4.172 4.172 0 004.827-3.38l1.701-9.648a5.28 5.28 0 01-1.635-.324l-1.707 9.682a2.5 2.5 0 01-2.896 2.028l-2.462-.434.144-.82a.834.834 0 00-1.641-.29l-.145.82-2.462-.433a2.5 2.5 0 01-2.028-2.897l2.026-11.49A2.5 2.5 0 018.57 2.09l4.866.858a5.28 5.28 0 01.296-1.64zm-.965 13.967a.834.834 0 00-.333-1.503l-4.924-.869a.833.833 0 10-.29 1.642l4.924.868a.833.833 0 00.623-.138z" fill="#f37022"></path>
-                                                    <path fill="#f37022" d="M10.191 5.778l1.686.297-.97 5.497-1.685-.297z"></path>
-                                                    <path d="M14.213 7.068a.833.833 0 00-.333-1.504l-4.924-.868a.833.833 0 10-.29 1.641l4.925.869a.833.833 0 00.622-.138z" fill="#f37022"></path>
-                                                </svg></svg-icon>
-                                        </div>
-                                    </a></app-raffle-card>
-                                <!---->
-                            </div>
-                        </div>
-                    </section>
-                    <!---->
-                    <!---->
-                    <!---->
+                    @endforeach
                 </div>
+
                 <app-why-choose-us _ngcontent-uuw-c76="" _nghost-uuw-c75="">
                     <section _ngcontent-uuw-c75="" class="why">
                         <div _ngcontent-uuw-c75="" class="container">
@@ -11340,6 +7885,7 @@
                         </div>
                     </section>
                 </app-why-choose-us>
+
                 <app-how-to-play _ngcontent-uuw-c76="" _nghost-uuw-c70="">
                     <section _ngcontent-uuw-c70="" class="how">
                         <div _ngcontent-uuw-c70="" class="container">
@@ -11370,6 +7916,7 @@
                         </div>
                     </section>
                 </app-how-to-play>
+
                 <app-reviews-google _ngcontent-uuw-c76="" _nghost-uuw-c68="">
                     <!---->
                     <div _ngcontent-uuw-c68="" class="reviews ng-star-inserted">
@@ -11512,6 +8059,7 @@
                     </div>
                     <!---->
                 </app-reviews-google>
+
                 <app-winners-section _ngcontent-uuw-c76="" _nghost-uuw-c69="" class="ng-star-inserted">
                     <div _ngcontent-uuw-c69="" class="winners">
                         <div _ngcontent-uuw-c69="" class="winners__header d-md-none container">
@@ -11537,7 +8085,7 @@
                         <div _ngcontent-uuw-c69="" class="winners__bg"></div>
                     </div>
                 </app-winners-section>
-                <!---->
+
                 <app-download-app _ngcontent-uuw-c76="" _nghost-uuw-c74="" class="ng-star-inserted">
                     <section _ngcontent-uuw-c74="" class="download">
                         <div _ngcontent-uuw-c74="" class="container">
@@ -11602,7 +8150,7 @@
                         </div>
                     </section>
                 </app-download-app>
-                <!---->
+
                 <app-payment-systems _ngcontent-uuw-c76="" _nghost-uuw-c67="">
                     <div _ngcontent-uuw-c67="" class="payments container_product">
                         <div _ngcontent-uuw-c67="" class="payments__payment ng-star-inserted">
@@ -11656,6 +8204,7 @@
                         <!---->
                     </div>
                 </app-payment-systems>
+
                 <app-footer _ngcontent-uuw-c76="" _nghost-uuw-c64="">
                     <div _ngcontent-uuw-c64="" class="footer">
                         <div _ngcontent-uuw-c64="" class="footer__wrapper">
@@ -11674,8 +8223,8 @@
                             </div>
                             <div _ngcontent-uuw-c64="" class="footer__social">
                                 <div _ngcontent-uuw-c64="">
-                                    <p _ngcontent-uuw-c64=""><a _ngcontent-uuw-c64="" href="mailto:hello@7daysperformance.co.uk" class="footer__social-email">hello@7daysperformance.co.uk</a></p>
-                                    <p _ngcontent-uuw-c64="" class="footer__annotation--light"> 7days Performance - Technology and Marketing powered by <a _ngcontent-uuw-c64="" href="https://sevencanyon.com/" target="_blank" class="footer__annotation--light"><u _ngcontent-uuw-c64="">SevenCanyon</u></a></p>
+                                    <p _ngcontent-uuw-c64=""><a _ngcontent-uuw-c64="" href="mailto:hello@myprizer.com" class="footer__social-email">hello@myprizer.com</a></p>
+                                    <p _ngcontent-uuw-c64="" class="footer__annotation--light"> {{ $site_settings->site_name }} - Technology and Marketing powered by <a _ngcontent-uuw-c64="" href="https://sevencanyon.com/" target="_blank" class="footer__annotation--light"><u _ngcontent-uuw-c64="">SevenCanyon</u></a></p>
                                     <p _ngcontent-uuw-c64="" class="footer__annotation--light">© All rights reserved</p>
                                 </div>
                                 <ul _ngcontent-uuw-c64="">
@@ -11714,24 +8263,25 @@
     var sliders = document.getElementsByClassName('nouislider');
     for (var i = 0; i < sliders.length; i++) {
         noUiSlider.create(sliders[i], {
-            start: [Math.floor(Math.random() * 100) + 1],
-            step: 1,
-            connect: 'lower',
-            tooltips: false,
-            range: {
-                'min': [10],
-                'max': [500]
+            start: [Math.floor(Math.random() * 100) + 1]
+            , step: 1
+            , connect: 'lower'
+            , tooltips: false
+            , range: {
+                'min': [10]
+                , 'max': [500]
             },
             // format to int
             format: {
-                to: function (value) {
+                to: function(value) {
                     return parseInt(value);
-                },
-                from: function (value) {
+                }
+                , from: function(value) {
                     return parseInt(value);
                 }
             }
         });
     }
+
 </script>
 @endsection

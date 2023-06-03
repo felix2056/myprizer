@@ -2,10 +2,46 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Prize;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    public function show(Request $request)
+    {
+        $prize = Prize::where('slug', $request->slug)->firstOrFail();
+        return view('product.show', compact('prize'));
+    }
+
+    public function cart(Request $request)
+    {
+        if($request->isMethod('post')){
+            $request->validate([
+                'prize_id' => 'required|exists:prizes,id',
+                'quantity' => 'required|integer|min:1',
+            ]);
+
+            $prize = Prize::findOrFail($request->prize_id);
+            $cart = session()->get('cart', []);
+
+            if(isset($cart[$prize->id])){
+                $cart[$prize->id]['quantity'] += $request->quantity;
+            }else{
+                $cart[$prize->id] = [
+                    'title' => $prize->title,
+                    'quantity' => $request->quantity,
+                    'price' => $prize->price,
+                    'image' => $prize->image,
+                ];
+            }
+
+            session()->put('cart', $cart);
+            return redirect()->back()->with('success', 'Product added to cart successfully!');
+        }
+
+        return view('product.cart');
+    }
+    
     public function product1()
     {
         return view('product.1');

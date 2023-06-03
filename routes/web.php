@@ -30,6 +30,8 @@ Route::prefix('my-account')->group(function () {
 });
 
 Route::prefix('product')->group(function () {
+    Route::get('{slug}', 'ProductController@show')->name('product.show');
+
     Route::get('instant-win-17', 'ProductController@product1')->name('product.1');
     Route::get('win-g80-m3-comp-1000cash', 'ProductController@product2')->name('product.2');
     Route::get('win-ford-ranger-wildtrak-1000cash', 'ProductController@product3')->name('product.3');
@@ -113,6 +115,8 @@ Route::prefix('product')->group(function () {
     Route::get('win-this-ps5-disc-edition-3', 'ProductController@product72')->name('product.72');
     Route::get('win-an-xbox-series-x-3', 'ProductController@product73')->name('product.73');
     Route::get('win-an-apple-watch-series-8-3', 'ProductController@product74')->name('product.74');
+
+    Route::match(['get', 'post'], 'cart', 'ProductController@cart')->name('product.cart');
 });
 
 Route::get('/check-cert', 'AppController@checkCert')->name('app.check-cert');

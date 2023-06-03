@@ -1,34 +1,38 @@
+@php
+$site_settings = \App\Models\SiteSetting::first();
+@endphp
+
 @extends('layouts.app')
 
 @section('head')
 <head>
     <meta charset="utf-8">
     <title>Win This US PRO TOOLS 55” Chest + Tools! - 7days Performance</title>
-    <meta name="description" content="Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!">
+    <meta name="description" content="{{ $site_settings->site_description ?? 'Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!' }}">
     <meta property="fb:app_id" content="">
     <meta name="apple-itunes-app" content="app-id=1455876956">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="7days Performance">
-    <meta name="og:description" content="Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!">
-    <meta property="og:site_name" content="7days Performance">
+    <meta property="og:title" content="{{ $site_settings->site_name }}">
+    <meta name="og:description" content="{{ $site_settings->site_description ?? 'Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!' }}">
+    <meta property="og:site_name" content="{{ $site_settings->site_name }}">
     <meta property="og:locale" content="en_GB">
-    <meta property="og:url" content="https://7daysperformance.co.uk">
+    <meta property="og:url" content="{{ $site_settings->site_url }}">
     <meta property="og:image" content="https://7daysperformance.co.uk/assets/images/preview-website-image.png">
     <meta property="og:image:width" content="1024">
     <meta property="og:image:height" content="500">
 
-    <meta name="twitter:title" content="7days Performance">
-    <meta name="twitter:description" content="Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!">
+    <meta name="twitter:title" content="{{ $site_settings->site_name }}">
+    <meta name="twitter:description" content="{{ $site_settings->site_description ?? 'Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!' }}">
     <meta name="twitter:widgets:theme" content="light">
     <meta name="twitter:widgets:link-color" content="#55acee">
     <meta name="twitter:widgets:border-color" content="#55acee">
     <meta name="twitter:card" content="summary">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="keywords" content="7days Performance, gambling, Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!">
-    <meta name="url" content="https://7daysperformance.co.uk">
-    <meta name="identifier-URL" content="https://7daysperformance.co.uk">
+    <meta name="keywords" content="{{ $site_settings->site_name }}, gambling, Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!">
+    <meta name="url" content="{{ $site_settings->site_url }}">
+    <meta name="identifier-URL" content="{{ $site_settings->site_url }}">
 
 
     <script async="true" src="https://tr.snapchat.com/config/uk/99063123-9f29-4600-8544-5a98bcd92c2c.js" crossorigin="anonymous"></script>
@@ -1104,40 +1108,9 @@
 
     </style>
 
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon2-350x350.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon2-350x350.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="/assets/icons/favicon2-350x350.png">
+    <link rel="icon" type="image/png" href="{{ $site_settings->site_favicon ?? '/assets/icons/favicon2-350x350.png' }}">
 
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime()
-                , event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0]
-                , j = d.createElement(s)
-                , dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.defer = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-TMGDNV3');
-
-    </script>
-    <!-- End Google Tag Manager -->
+    
     <style>
         @charset "UTF-8";
 
@@ -1175,7 +1148,7 @@
     </style>
     <link rel="stylesheet" href="styles.8c1c0d7361d8e666.css" media="all" onload="this.media='all'"><noscript>
         <link rel="stylesheet" href="styles.8c1c0d7361d8e666.css"></noscript>
-    <style type="text/css"></style>
+    
     <style>
         @-webkit-keyframes rotate {
             0% {
@@ -7097,7 +7070,7 @@
                                     <svg-icon _ngcontent-fqv-c63="" name="hamburger-new" class="nav-button__icon nav-button__icon_hamburger" _nghost-fqv-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="fill: currentcolor;">
                                             <path d="M19.167 9.166H.833a.833.833 0 100 1.667h18.334a.833.833 0 000-1.667zM19.167 3.334H.833a.833.833 0 000 1.667h18.334a.833.833 0 000-1.667zM19.167 15H.833a.833.833 0 100 1.667h18.334a.833.833 0 000-1.667z" fill="#00131F"></path>
                                         </svg></svg-icon>
-                                </button><a _ngcontent-fqv-c63="" routerlink="/cart" class="header__button nav-button" href="/cart"><span _ngcontent-fqv-c63="" class="nav-button__label ng-star-inserted">0</span>
+                                </button><a _ngcontent-fqv-c63="" routerlink="/cart" class="header__button nav-button" href="/cart"><span _ngcontent-fqv-c63="" class="cart__count nav-button__label ng-star-inserted">0</span>
                                     <!---->
                                     <!---->
                                     <svg-icon _ngcontent-fqv-c63="" name="cart-new" class="nav-button__icon nav-button__icon_shopping-cart" _nghost-fqv-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="fill: currentcolor;">
@@ -7697,8 +7670,8 @@
                             </div>
                             <div _ngcontent-fqv-c64="" class="footer__social">
                                 <div _ngcontent-fqv-c64="">
-                                    <p _ngcontent-fqv-c64=""><a _ngcontent-fqv-c64="" href="mailto:hello@7daysperformance.co.uk" class="footer__social-email">hello@7daysperformance.co.uk</a></p>
-                                    <p _ngcontent-fqv-c64="" class="footer__annotation--light"> 7days Performance - Technology and Marketing powered by <a _ngcontent-fqv-c64="" href="https://sevencanyon.com/" target="_blank" class="footer__annotation--light"><u _ngcontent-fqv-c64="">SevenCanyon</u></a></p>
+                                    <p _ngcontent-fqv-c64=""><a _ngcontent-fqv-c64="" href="mailto:hello@myprizer.com" class="footer__social-email">hello@myprizer.com</a></p>
+                                    <p _ngcontent-fqv-c64="" class="footer__annotation--light"> {{ $site_settings->site_name }} - Technology and Marketing powered by <a _ngcontent-fqv-c64="" href="https://sevencanyon.com/" target="_blank" class="footer__annotation--light"><u _ngcontent-fqv-c64="">SevenCanyon</u></a></p>
                                     <p _ngcontent-fqv-c64="" class="footer__annotation--light">© All rights reserved</p>
                                 </div>
                                 <ul _ngcontent-fqv-c64="">

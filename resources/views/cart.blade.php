@@ -1,34 +1,38 @@
+@php
+$site_settings = \App\Models\SiteSetting::first();
+@endphp
+
 @extends('layouts.app')
 
 @section('head')
 <head>
     <meta charset="utf-8">
-    <title>7days Performance</title>
-    <meta name="description" content="Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!">
+    <title>{{ $site_settings->site_name }}</title>
+    <meta name="description" content="{{ $site_settings->site_description ?? 'Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!' }}">
     <meta property="fb:app_id" content="">
     <meta name="apple-itunes-app" content="app-id=1455876956">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="7days Performance">
-    <meta name="og:description" content="Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!">
-    <meta property="og:site_name" content="7days Performance">
+    <meta property="og:title" content="{{ $site_settings->site_name }}">
+    <meta name="og:description" content="{{ $site_settings->site_description ?? 'Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!' }}">
+    <meta property="og:site_name" content="{{ $site_settings->site_name }}">
     <meta property="og:locale" content="en_GB">
-    <meta property="og:url" content="https://7daysperformance.co.uk">
+    <meta property="og:url" content="{{ $site_settings->site_url }}">
     <meta property="og:image" content="https://7daysperformance.co.uk/assets/images/preview-website-image.png">
     <meta property="og:image:width" content="1024">
     <meta property="og:image:height" content="500">
 
-    <meta name="twitter:title" content="7days Performance">
-    <meta name="twitter:description" content="Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!">
+    <meta name="twitter:title" content="{{ $site_settings->site_name }}">
+    <meta name="twitter:description" content="{{ $site_settings->site_description ?? 'Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!' }}">
     <meta name="twitter:widgets:theme" content="light">
     <meta name="twitter:widgets:link-color" content="#55acee">
     <meta name="twitter:widgets:border-color" content="#55acee">
     <meta name="twitter:card" content="summary">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta name="keywords" content="7days Performance, gambling, Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!">
-    <meta name="url" content="https://7daysperformance.co.uk">
-    <meta name="identifier-URL" content="https://7daysperformance.co.uk">
+    <meta name="keywords" content="{{ $site_settings->site_name }}, gambling, Win your dream car from as little as 79p. Guaranteed winners announced live on Facebook regardless of sellout. No rollovers, no extensions. Enter Now!">
+    <meta name="url" content="{{ $site_settings->site_url }}">
+    <meta name="identifier-URL" content="{{ $site_settings->site_url }}">
 
 
     <script async="true" src="https://tr.snapchat.com/config/uk/99063123-9f29-4600-8544-5a98bcd92c2c.js" crossorigin="anonymous"></script>
@@ -44,37 +48,9 @@
     <script src="https://www.googleoptimize.com/optimize.js?id=OPT-THKDQV3" async=""></script>
 
     <base href="/">
-
-
-    <script type="text/javascript" src="/config/env.js"></script>
+    
     <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async=""></script>
-    <script src="https://7daysperformance.co.uk/app/js/plugin/visitevent.js?6"></script>
-    <script type="text/javascript" id="visitevent-loader">
-        (function() {
-            var elem = document.createElement('script');
-            // elem.async = true;
-            elem.src = window.ENVIRONMENT_PARAMETERS.api_path + '/app/js/plugin/visitevent.js?6';
-            var thisScript = document.getElementById('visitevent-loader');
-            thisScript.parentNode.insertBefore(elem, thisScript);
-        })();
-
-    </script>
-    <script async="" src="https://sevendays.user.com/widget.js?2"></script>
-    <script type="text/javascript" id="userengage-loader">
-        if (window.ENVIRONMENT_PARAMETERS.userengage_subdomain && window.ENVIRONMENT_PARAMETERS.userengage_apikey) {
-            window.civchat = {
-                apiKey: window.ENVIRONMENT_PARAMETERS.userengage_apikey
-            , };
-            (function() {
-                var elem = document.createElement('script');
-                elem.async = true;
-                elem.src = 'https://' + window.ENVIRONMENT_PARAMETERS.userengage_subdomain + '.user.com/widget.js?2';
-                var thisScript = document.getElementById('userengage-loader');
-                thisScript.parentNode.insertBefore(elem, thisScript);
-            })();
-        }
-
-    </script>
+    
     <script>
         ! function(t, e, n, s, a, c, i, o, p) {
             t.AppsFlyerSdkObject = a, t.AF = t.AF || function() {
@@ -268,40 +244,8 @@
 
     </style>
 
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon2-350x350.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon2-350x350.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/favicon2-350x350.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="/assets/icons/favicon2-350x350.png">
+    <link rel="icon" type="image/png" href="{{ $site_settings->site_favicon ?? '/assets/icons/favicon2-350x350.png' }}">
 
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime()
-                , event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0]
-                , j = d.createElement(s)
-                , dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.defer = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-TMGDNV3');
-
-    </script>
-    <!-- End Google Tag Manager -->
     <style>
         @charset "UTF-8";
 
@@ -337,9 +281,12 @@
         }
 
     </style>
-    <link rel="stylesheet" href="styles.8c1c0d7361d8e666.css" media="all" onload="this.media='all'"><noscript>
-        <link rel="stylesheet" href="styles.8c1c0d7361d8e666.css"></noscript>
-    <style type="text/css"></style>
+
+    <link rel="stylesheet" href="styles.8c1c0d7361d8e666.css" media="all" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="styles.8c1c0d7361d8e666.css">
+    </noscript>
+
     <style>
         .current-competitions__section[_ngcontent-hpj-c79] {
             padding-top: 20px;
@@ -1276,7 +1223,6 @@
         }
 
     </style>
-    <script src="chrome-extension://doocmbmlcnbbdohogchldhlikjpndpng/yts-controls.js" extensionbaseurl="chrome-extension://doocmbmlcnbbdohogchldhlikjpndpng"></script>
     <style type="text/css">
         @font-face {
             font-weight: 400;
@@ -2583,32 +2529,32 @@
             }
         }
 
-        .alert-list__item[_ngcontent-hpj-c126] {
+        .alert-list__item {
             margin-bottom: 25px
         }
 
-        .alert-list__item--short[_ngcontent-hpj-c126] {
+        .alert-list__item--short {
             padding-top: 10px !important;
             padding-bottom: 10px !important
         }
 
-        .alert-list__item--lighter-font[_ngcontent-hpj-c126] p[_ngcontent-hpj-c126],
-        .alert-list__item--lighter-font[_ngcontent-hpj-c126] p[_ngcontent-hpj-c126] a[_ngcontent-hpj-c126] {
+        .alert-list__item--lighter-font p,
+        .alert-list__item--lighter-font p a {
             font-size: 16px;
             font-weight: 300
         }
 
-        .alert-list__item--smaller-font[_ngcontent-hpj-c126] p[_ngcontent-hpj-c126],
-        .alert-list__item--smaller-font[_ngcontent-hpj-c126] p[_ngcontent-hpj-c126] a[_ngcontent-hpj-c126] {
+        .alert-list__item--smaller-font p,
+        .alert-list__item--smaller-font p a {
             font-size: 16px
         }
 
-        .alert-list--margin-minus10px[_ngcontent-hpj-c126] {
+        .alert-list--margin-minus10px {
             margin-left: -10px;
             margin-right: -10px
         }
 
-        .alert[_ngcontent-hpj-c126] {
+        .alert {
             display: -webkit-flex;
             display: flex;
             -webkit-justify-content: center;
@@ -2620,33 +2566,33 @@
             border-style: solid
         }
 
-        .alert_column[_ngcontent-hpj-c126] {
+        .alert_column {
             -webkit-flex-direction: column;
             flex-direction: column
         }
 
-        .alert_blue[_ngcontent-hpj-c126] {
+        .alert_blue {
             background-color: #cce9fe;
             border-color: #b8e0fe
         }
 
-        .alert_light-blue[_ngcontent-hpj-c126] {
+        .alert_light-blue {
             background: #ecf9ff;
             border-color: #ecf9ff
         }
 
-        .alert_green[_ngcontent-hpj-c126] {
+        .alert_green {
             background-color: #d9f7e7;
             border-color: #caf3dd
         }
 
-        .alert_warn[_ngcontent-hpj-c126] {
+        .alert_warn {
             color: #856404;
             background-color: #fff3cd;
             border-color: #ffeeba
         }
 
-        .alert_error[_ngcontent-hpj-c126] {
+        .alert_error {
             color: #721c24;
             background-color: #f8d7da;
             border-color: #f5c6cb;
@@ -2656,22 +2602,22 @@
             flex-direction: column
         }
 
-        .alert_text-left[_ngcontent-hpj-c126] {
+        .alert_text-left {
             text-align: left;
             -webkit-justify-content: flex-start;
             justify-content: flex-start
         }
 
-        .alert_mt[_ngcontent-hpj-c126] {
+        .alert_mt {
             margin-top: 50px
         }
 
-        .alert_mb[_ngcontent-hpj-c126] {
+        .alert_mb {
             margin-bottom: 30px
         }
 
-        .alert__text[_ngcontent-hpj-c126],
-        .alert__link[_ngcontent-hpj-c126] {
+        .alert__text,
+        .alert__link {
             margin: 0;
             font-size: 17px;
             line-height: 26px;
@@ -2679,59 +2625,59 @@
             text-align: center
         }
 
-        .alert_blue[_ngcontent-hpj-c126] .alert__text[_ngcontent-hpj-c126],
-        .alert_light-blue[_ngcontent-hpj-c126] .alert__text[_ngcontent-hpj-c126],
-        .alert_blue[_ngcontent-hpj-c126] .alert__link[_ngcontent-hpj-c126],
-        .alert_light-blue[_ngcontent-hpj-c126] .alert__link[_ngcontent-hpj-c126] {
+        .alert_blue .alert__text,
+        .alert_light-blue .alert__text,
+        .alert_blue .alert__link,
+        .alert_light-blue .alert__link {
             color: #124264
         }
 
-        .alert_green[_ngcontent-hpj-c126] .alert__text[_ngcontent-hpj-c126],
-        .alert_green[_ngcontent-hpj-c126] .alert__link[_ngcontent-hpj-c126] {
+        .alert_green .alert__text,
+        .alert_green .alert__link {
             color: #216f46
         }
 
-        .alert__text_d-blue[_ngcontent-hpj-c126],
-        .alert__link_d-blue[_ngcontent-hpj-c126] {
+        .alert__text_d-blue,
+        .alert__link_d-blue {
             color: #124264
         }
 
-        .alert__link[_ngcontent-hpj-c126] {
+        .alert__link {
             font-size: 17px;
             line-height: 26px;
             font-weight: 400;
             text-decoration: none
         }
 
-        .alert__link[_ngcontent-hpj-c126]:hover {
+        .alert__link:hover {
             text-decoration: underline
         }
 
-        .alert_blue[_ngcontent-hpj-c126] .alert__link[_ngcontent-hpj-c126],
-        .alert_light-blue[_ngcontent-hpj-c126] .alert__link[_ngcontent-hpj-c126],
-        .alert_warn[_ngcontent-hpj-c126] .alert__link[_ngcontent-hpj-c126] {
+        .alert_blue .alert__link,
+        .alert_light-blue .alert__link,
+        .alert_warn .alert__link {
             color: #3fa9f5
         }
 
-        .alert__link_right[_ngcontent-hpj-c126] {
+        .alert__link_right {
             margin-left: auto
         }
 
-        .alert__link_green[_ngcontent-hpj-c126] {
+        .alert__link_green {
             color: #216f46
         }
 
-        .alert__link_d-blue[_ngcontent-hpj-c126] {
+        .alert__link_d-blue {
             color: #124264
         }
 
-        .alert__link_dark[_ngcontent-hpj-c126] {
+        .alert__link_dark {
             color: #357 !important;
             text-decoration: underline;
             font-weight: 600
         }
 
-        .alert__action[_ngcontent-hpj-c126] {
+        .alert__action {
             margin-left: auto;
             padding: 0;
             border-width: 0;
@@ -2741,15 +2687,15 @@
             transition: color .3s
         }
 
-        .alert_green[_ngcontent-hpj-c126] .alert__action[_ngcontent-hpj-c126]:hover {
+        .alert_green .alert__action:hover {
             color: #40d586
         }
 
-        .alert__action_d-blue[_ngcontent-hpj-c126] {
+        .alert__action_d-blue {
             color: #124264
         }
 
-        .cart-table[_ngcontent-hpj-c126] {
+        .cart-table {
             width: 100%;
             font-size: 16px;
             line-height: 1;
@@ -2763,13 +2709,13 @@
         }
 
         @media (max-width: 767.9px) {
-            .cart-table[_ngcontent-hpj-c126] {
+            .cart-table {
                 font-size: 14px;
                 margin-top: 20px
             }
         }
 
-        .cart-table__row[_ngcontent-hpj-c126] {
+        .cart-table__row {
             position: relative;
             display: -webkit-flex;
             display: flex;
@@ -2789,7 +2735,7 @@
         }
 
         @media (max-width: 767.9px) {
-            .cart-table__row[_ngcontent-hpj-c126] {
+            .cart-table__row {
                 padding: 15px 0 10px 93px;
                 min-height: 101px;
                 -webkit-align-items: flex-start;
@@ -2797,17 +2743,17 @@
             }
         }
 
-        .cart-table__row[_ngcontent-hpj-c126]:first-of-type {
+        .cart-table__row:first-of-type {
             border-top: solid 1px #e5e5e5
         }
 
-        .cart-table__row_updating[_ngcontent-hpj-c126] {
+        .cart-table__row_updating {
             opacity: .5;
             -webkit-filter: grayscale(100%);
             filter: grayscale(100%)
         }
 
-        .cart-table__cell[_ngcontent-hpj-c126] {
+        .cart-table__cell {
             position: relative;
             display: -webkit-flex;
             display: flex;
@@ -2819,7 +2765,7 @@
             align-content: center
         }
 
-        .cart-table__cell_image[_ngcontent-hpj-c126] {
+        .cart-table__cell_image {
             max-width: 120px;
             min-width: 93px;
             width: 10.9%;
@@ -2828,13 +2774,13 @@
         }
 
         @media (max-width: 991.9px) {
-            .cart-table__cell_image[_ngcontent-hpj-c126] {
+            .cart-table__cell_image {
                 width: 13.9%
             }
         }
 
         @media (max-width: 767.9px) {
-            .cart-table__cell_image[_ngcontent-hpj-c126] {
+            .cart-table__cell_image {
                 position: absolute;
                 left: 0;
                 top: 16px;
@@ -2844,18 +2790,18 @@
             }
         }
 
-        .cart-table__cell_image[_ngcontent-hpj-c126] a[_ngcontent-hpj-c126] {
+        .cart-table__cell_image a {
             font-size: 0
         }
 
-        .cart-table__cell_image[_ngcontent-hpj-c126] img[_ngcontent-hpj-c126] {
+        .cart-table__cell_image img {
             width: 100%;
             height: 100%;
             -o-object-fit: cover;
             object-fit: cover
         }
 
-        .cart-table__cell_name[_ngcontent-hpj-c126] {
+        .cart-table__cell_name {
             max-width: 500px;
             width: 45%;
             padding-left: 29px;
@@ -2871,13 +2817,13 @@
         }
 
         @media (max-width: 991.9px) {
-            .cart-table__cell_name[_ngcontent-hpj-c126] {
+            .cart-table__cell_name {
                 width: 43%
             }
         }
 
         @media (max-width: 767.9px) {
-            .cart-table__cell_name[_ngcontent-hpj-c126] {
+            .cart-table__cell_name {
                 max-width: 100%;
                 width: 100%;
                 padding-left: 12px;
@@ -2887,7 +2833,7 @@
             }
         }
 
-        .cart-table__cell_quantity[_ngcontent-hpj-c126] {
+        .cart-table__cell_quantity {
             max-width: 287px;
             width: 23.3%;
             -webkit-flex-wrap: wrap;
@@ -2895,26 +2841,26 @@
         }
 
         @media (max-width: 991.9px) {
-            .cart-table__cell_quantity[_ngcontent-hpj-c126] {
+            .cart-table__cell_quantity {
                 width: 22.3%
             }
         }
 
         @media (max-width: 767.9px) {
-            .cart-table__cell_quantity[_ngcontent-hpj-c126] {
+            .cart-table__cell_quantity {
                 width: auto;
                 padding-left: 12px
             }
         }
 
-        .cart-table__cell_price[_ngcontent-hpj-c126] {
+        .cart-table__cell_price {
             max-width: 165px;
             width: 14.9%;
             padding-left: 29px
         }
 
         @media (max-width: 767.9px) {
-            .cart-table__cell_price[_ngcontent-hpj-c126] {
+            .cart-table__cell_price {
                 width: auto;
                 padding-left: 14px;
                 height: 24px;
@@ -2922,7 +2868,7 @@
             }
         }
 
-        .cart-table__cell_remove[_ngcontent-hpj-c126] {
+        .cart-table__cell_remove {
             width: 5.9%;
             max-width: 68px;
             display: -webkit-flex;
@@ -2934,7 +2880,7 @@
         }
 
         @media (max-width: 767.9px) {
-            .cart-table__cell_remove[_ngcontent-hpj-c126] {
+            .cart-table__cell_remove {
                 position: absolute;
                 right: 0;
                 top: 18px;
@@ -2942,30 +2888,30 @@
             }
         }
 
-        .cart-table__link[_ngcontent-hpj-c126] {
+        .cart-table__link {
             color: #3fa9f5;
             text-decoration: none;
             font-size: 16px
         }
 
         @media (max-width: 767.9px) {
-            .cart-table__link[_ngcontent-hpj-c126] {
+            .cart-table__link {
                 font-size: 14px
             }
         }
 
         @media (max-width: 377.9px) {
-            .cart-table__link[_ngcontent-hpj-c126] {
+            .cart-table__link {
                 font-size: 13px
             }
         }
 
-        .cart-table__link[_ngcontent-hpj-c126]:hover {
+        .cart-table__link:hover {
             color: #0b85dc;
             text-decoration: underline
         }
 
-        .cart-table__remove[_ngcontent-hpj-c126] {
+        .cart-table__remove {
             border: none;
             background-color: transparent;
             font-size: 23px;
@@ -2975,7 +2921,7 @@
             padding: 0
         }
 
-        .cart-table__text[_ngcontent-hpj-c126] {
+        .cart-table__text {
             margin: 0;
             color: gray;
             font-size: 16px;
@@ -2983,12 +2929,12 @@
         }
 
         @media (max-width: 767.9px) {
-            .cart-table__text[_ngcontent-hpj-c126] {
+            .cart-table__text {
                 font-size: 14px
             }
         }
 
-        .cart-table__answer[_ngcontent-hpj-c126] {
+        .cart-table__answer {
             color: #8b8b8b;
             line-height: 1;
             margin: 0;
@@ -2996,32 +2942,32 @@
         }
 
         @media (max-width: 767.9px) {
-            .cart-table__answer[_ngcontent-hpj-c126] {
+            .cart-table__answer {
                 font-size: 12px;
                 padding-top: 0;
                 margin: 4px 0
             }
         }
 
-        .cart-table__text-bold[_ngcontent-hpj-c126] {
+        .cart-table__text-bold {
             margin: 0;
             font-weight: 700;
             color: gray
         }
 
-        .cart-table__price[_ngcontent-hpj-c126] {
+        .cart-table__price {
             font-weight: 500;
             color: #495057
         }
 
-        .cart-table__original-price[_ngcontent-hpj-c126] {
+        .cart-table__original-price {
             font-weight: 400;
             color: #adbdc8;
             text-decoration: line-through;
             padding-left: 5px
         }
 
-        .cart-table__quantity[_ngcontent-hpj-c126] {
+        .cart-table__quantity {
             border: 1px solid #e9e9e9;
             border-radius: 4px;
             box-shadow: 0 0 4px rgba(0, 0, 0, .08);
@@ -3029,7 +2975,7 @@
             display: flex
         }
 
-        .cart-table__quantity[_ngcontent-hpj-c126] button[_ngcontent-hpj-c126] {
+        .cart-table__quantity button {
             background-color: transparent;
             border: none;
             width: 30px;
@@ -3048,20 +2994,20 @@
             cursor: pointer
         }
 
-        .cart-table__quantity[_ngcontent-hpj-c126] button[_ngcontent-hpj-c126]:disabled {
+        .cart-table__quantity button:disabled {
             background-color: #f9f9f9;
             box-shadow: none;
             color: #c4c9ce
         }
 
         @media (max-width: 767.9px) {
-            .cart-table__quantity[_ngcontent-hpj-c126] button[_ngcontent-hpj-c126] {
+            .cart-table__quantity button {
                 width: 18px;
                 height: 22px
             }
         }
 
-        .cart-table__quantity[_ngcontent-hpj-c126] input[_ngcontent-hpj-c126] {
+        .cart-table__quantity input {
             border: none;
             height: 30px;
             min-width: 41px;
@@ -3075,7 +3021,7 @@
         }
 
         @media (max-width: 767.9px) {
-            .cart-table__quantity[_ngcontent-hpj-c126] input[_ngcontent-hpj-c126] {
+            .cart-table__quantity input {
                 font-size: 14px;
                 padding-top: 2px;
                 min-width: 33px;
@@ -3083,7 +3029,7 @@
             }
         }
 
-        .cart-table__bottom-wrapper[_ngcontent-hpj-c126] {
+        .cart-table__bottom-wrapper {
             display: -webkit-flex;
             display: flex;
             -webkit-flex-wrap: wrap;
@@ -3096,29 +3042,29 @@
         }
 
         @media (max-width: 991.9px) {
-            .cart-table__bottom-wrapper[_ngcontent-hpj-c126] {
+            .cart-table__bottom-wrapper {
                 margin-top: 15px;
                 padding: 0
             }
         }
 
-        .cart-table__addons[_ngcontent-hpj-c126]>div[_ngcontent-hpj-c126] {
+        .cart-table__addons>div {
             margin-bottom: 10px
         }
 
-        .cart-table__coupon[_ngcontent-hpj-c126] {
+        .cart-table__coupon {
             display: -webkit-flex;
             display: flex
         }
 
-        .cart-table__coupon[_ngcontent-hpj-c126] form[_ngcontent-hpj-c126] {
+        .cart-table__coupon form {
             display: -webkit-flex;
             display: flex;
             -webkit-align-items: flex-start;
             align-items: flex-start
         }
 
-        .cart-table__coupon-input[_ngcontent-hpj-c126] {
+        .cart-table__coupon-input {
             width: 145px;
             padding: 9px 10px 7px;
             height: 31px;
@@ -3130,7 +3076,7 @@
         }
 
         @media (max-width: 575.9px) {
-            .cart-table__coupon-input[_ngcontent-hpj-c126] {
+            .cart-table__coupon-input {
                 width: 129px;
                 font-size: 12px;
                 height: 25px;
@@ -3138,7 +3084,7 @@
             }
         }
 
-        .cart-table__coupon-button[_ngcontent-hpj-c126] {
+        .cart-table__coupon-button {
             width: 108px;
             height: 31px;
             border-radius: 0 4px 4px 0;
@@ -3151,7 +3097,7 @@
         }
 
         @media (max-width: 575.9px) {
-            .cart-table__coupon-button[_ngcontent-hpj-c126] {
+            .cart-table__coupon-button {
                 width: 93px;
                 height: 25px;
                 font-size: 12px;
@@ -3159,7 +3105,7 @@
             }
         }
 
-        .cart-table__quantity-error[_ngcontent-hpj-c126] {
+        .cart-table__quantity-error {
             color: #dc3545;
             font-size: 13px;
             font-weight: 400;
@@ -3167,7 +3113,7 @@
             width: 100%
         }
 
-        .cart-table__reset-link[_ngcontent-hpj-c126] {
+        .cart-table__reset-link {
             color: #3fa9f5;
             font-size: 18px;
             text-decoration: none;
@@ -3175,18 +3121,18 @@
             margin: 12px 30px
         }
 
-        .cart-table__reset-link[_ngcontent-hpj-c126]:hover {
+        .cart-table__reset-link:hover {
             text-decoration: underline
         }
 
-        .cart-total[_ngcontent-hpj-c126] {
+        .cart-total {
             width: 50%;
             max-width: 420px;
             padding-top: 15px
         }
 
         @media (max-width: 767.9px) {
-            .cart-total[_ngcontent-hpj-c126] {
+            .cart-total {
                 max-width: 370px;
                 width: 100%;
                 padding-top: 50px;
@@ -3194,11 +3140,11 @@
             }
         }
 
-        .cart-total__table[_ngcontent-hpj-c126] {
+        .cart-total__table {
             width: 100%
         }
 
-        .cart-total__row[_ngcontent-hpj-c126] {
+        .cart-total__row {
             display: -webkit-flex;
             display: flex;
             -webkit-justify-content: space-between;
@@ -3209,51 +3155,51 @@
             font-weight: 500
         }
 
-        .cart-total__row[_ngcontent-hpj-c126]:last-of-type {
+        .cart-total__row:last-of-type {
             font-weight: 800;
             margin-bottom: 0
         }
 
-        .cart-total__cell[_ngcontent-hpj-c126] {
+        .cart-total__cell {
             font-size: 18px;
             line-height: 1;
             color: #000
         }
 
         @media (max-width: 767.9px) {
-            .cart-total__cell[_ngcontent-hpj-c126] {
+            .cart-total__cell {
                 font-size: 14px
             }
         }
 
         @media (max-width: 767.9px) {
-            .cart-total__cell--large[_ngcontent-hpj-c126] {
+            .cart-total__cell--large {
                 font-size: 18px
             }
         }
 
         @media (max-width: 377.9px) {
-            .cart-total__cell--large[_ngcontent-hpj-c126] {
+            .cart-total__cell--large {
                 font-size: 16px
             }
         }
 
-        .cart-total__cell_coupon-value[_ngcontent-hpj-c126] {
+        .cart-total__cell_coupon-value {
             color: #00ac51
         }
 
-        .cart-total__checkout[_ngcontent-hpj-c126] {
+        .cart-total__checkout {
             width: 100%;
             margin-top: 31px
         }
 
         @media (max-width: 767.9px) {
-            .cart-total__checkout[_ngcontent-hpj-c126] {
+            .cart-total__checkout {
                 margin-top: 27px
             }
         }
 
-        .cart-total__remove-coupon[_ngcontent-hpj-c126] {
+        .cart-total__remove-coupon {
             font-weight: 400;
             font-size: 14px;
             color: #F37021;
@@ -3261,29 +3207,29 @@
             text-decoration: none
         }
 
-        .cart-total__remove-coupon[_ngcontent-hpj-c126]:hover {
+        .cart-total__remove-coupon:hover {
             text-decoration: underline
         }
 
-        .cart-total__checkout-note[_ngcontent-hpj-c126] {
+        .cart-total__checkout-note {
             display: inline-block;
             margin-top: 8px;
             font-size: 16px
         }
 
         @media (max-width: 767.9px) {
-            .cart-total__checkout-note[_ngcontent-hpj-c126] {
+            .cart-total__checkout-note {
                 font-size: 14px
             }
         }
 
-        .cart-total__asterisk[_ngcontent-hpj-c126] {
+        .cart-total__asterisk {
             color: #dc3545;
             font-style: normal
         }
 
         @media (max-width: 767.9px) {
-            .cart__items-container[_ngcontent-hpj-c126] {
+            .cart__items-container {
                 max-width: 500px
             }
         }
@@ -3319,7 +3265,7 @@
                                     <svg-icon _ngcontent-hpj-c63="" name="hamburger-new" class="nav-button__icon nav-button__icon_hamburger" _nghost-hpj-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="fill: currentcolor;">
                                             <path d="M19.167 9.166H.833a.833.833 0 100 1.667h18.334a.833.833 0 000-1.667zM19.167 3.334H.833a.833.833 0 000 1.667h18.334a.833.833 0 000-1.667zM19.167 15H.833a.833.833 0 100 1.667h18.334a.833.833 0 000-1.667z" fill="#00131F"></path>
                                         </svg></svg-icon>
-                                </button><a _ngcontent-hpj-c63="" routerlink="/cart" class="header__button nav-button" href="/cart"><span _ngcontent-hpj-c63="" class="nav-button__label ng-star-inserted">0</span>
+                                </button><a _ngcontent-hpj-c63="" routerlink="/cart" class="header__button nav-button" href="/cart"><span _ngcontent-hpj-c63="" class="cart__count nav-button__label ng-star-inserted">0</span>
                                     <!---->
                                     <!---->
                                     <svg-icon _ngcontent-hpj-c63="" name="cart-new" class="nav-button__icon nav-button__icon_shopping-cart" _nghost-hpj-c61="" role="img"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="fill: currentcolor;">
@@ -3391,34 +3337,85 @@
                         <!---->
                     </div>
                 </app-header>
+
                 <h2 _ngcontent-hpj-c126="" class="section-title section-title--cart">Basket</h2>
                 <app-top-availability-message _ngcontent-hpj-c126="" _nghost-hpj-c66="">
                     <!---->
                 </app-top-availability-message>
-                <div _ngcontent-hpj-c126="" class="min90height">
-                    <!---->
-                    <!---->
-                    <!---->
+
+                <div _ngcontent-bwp-c99="" id="cart" class="min90height" style="display: none;">
+                    <section _ngcontent-bwp-c99="" class="section section_shopping-cart ng-star-inserted">
+                        <div _ngcontent-bwp-c99="" class="container container_cart cart__items-container">
+                            <form _ngcontent-bwp-c99="" novalidate="" class="ng-untouched ng-pristine ng-valid">
+                                <div _ngcontent-bwp-c99="" formarrayname="items" class="cart-table">
+                                    {{-- <div _ngcontent-bwp-c99="" class="cart-table__row">
+                                        <div _ngcontent-bwp-c99="" class="cart-table__cell cart-table__cell_image">
+                                            <a _ngcontent-bwp-c99="" href="/product/win-grey-rsq8-2000cash">
+                                                <img _ngcontent-bwp-c99="" alt="" class="cart-table__image" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/35/892cf29ad2a65cd0168708d095820ff8ff95b9e1.jpg">
+                                            </a>
+                                        </div>
+                                        <div _ngcontent-bwp-c99="" class="cart-table__cell cart-table__cell_name">
+                                            <a _ngcontent-bwp-c99="" class="cart-table__link" href="/product/win-grey-rsq8-2000cash">Win This Nardo Grey 2022 Audi RSQ8 Vorsprung + £2,000 Cash!</a>
+                                            <p _ngcontent-bwp-c99="" class="cart-table__answer ng-star-inserted">
+                                                <span _ngcontent-bwp-c99="" class="cart-table__text-bold">Answer:</span> Corsa 
+                                            </p>
+                                        </div>
+                                        <div _ngcontent-bwp-c99="" class="cart-table__cell cart-table__cell_quantity">
+                                            <div _ngcontent-bwp-c99="" class="cart-table__quantity">
+                                                <button _ngcontent-bwp-c99="" type="button">-</button>
+                                                <input _ngcontent-bwp-c99="" type="text" formcontrolname="editableQuantity" apponlynumbers="" inputmode="numeric" size="2" class="ng-untouched ng-pristine ng-valid">
+                                                <button _ngcontent-bwp-c99="" type="button">+</button>
+                                            </div>
+                                        </div>
+                                        <div _ngcontent-bwp-c99="" class="cart-table__cell cart-table__cell_price">
+                                            <span _ngcontent-bwp-c99="" class="cart-table__price ng-star-inserted"> £19.80</span>
+                                        </div>
+                                        <div _ngcontent-bwp-c99="" class="cart-table__cell cart-table__cell_remove">
+                                            <button _ngcontent-bwp-c99="" type="button" class="cart-table__remove">×</button>
+                                        </div>
+                                    </div> --}}
+                                </div>
+                            </form>
+
+                            <div _ngcontent-bwp-c99="" class="cart-table__bottom-wrapper">
+                                <div _ngcontent-bwp-c99="" class="cart-table__addons">
+                                    <!---->
+                                    {{-- <div _ngcontent-bwp-c99="" class="cart-table__coupon">
+                                        <form _ngcontent-bwp-c99="" novalidate="" class="ng-untouched ng-pristine ng-valid">
+                                            <input _ngcontent-bwp-c99="" name="enteredCouponCode" type="text" placeholder="Coupon code" class="cart-table__coupon-input ng-untouched ng-pristine ng-valid">
+                                            <button _ngcontent-bwp-c99="" type="submit" class="button cart-table__coupon-button button_no-shadow">Apply coupon</button>
+                                        </form>
+                                    </div> --}}
+                                </div>
+                                <div _ngcontent-bwp-c99="" class="cart-total">
+                                    <div _ngcontent-bwp-c99="" class="cart-total__table">
+                                        <div _ngcontent-bwp-c99="" class="cart-total__row">
+                                            <div _ngcontent-bwp-c99="" class="cart-total__cell">Total</div>
+                                            <div _ngcontent-bwp-c99="" class="cart-total__cell" id="cart-total__cell"> £19.80 </div>
+                                        </div>
+                                    </div><a _ngcontent-bwp-c99="" routerlink="/checkout/" class="button button_green button_no-shadow cart-total__checkout" href="/checkout"> Proceed to checkout </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div _ngcontent-bwp-c99="" class="py-5 ng-star-inserted"></div>
+                </div>
+
+                <div _ngcontent-hpj-c126="" id="empty-cart" class="min90height" style="display: none;">
                     <section _ngcontent-hpj-c126="" class="section section_shopping-cart pt-4 ng-star-inserted">
                         <div _ngcontent-hpj-c126="" class="alert alert_blue ng-star-inserted">
                             <p _ngcontent-hpj-c126="" class="alert__text">Your basket is currently empty.</p>
                         </div>
-                        <!---->
-                        <!---->
                     </section>
                     <section _ngcontent-hpj-c126="" class="section section_return-container ng-star-inserted">
                         <div _ngcontent-hpj-c126="" class="container">
                             <div _ngcontent-hpj-c126="" class="section__wrapper section__wrapper_center"><a _ngcontent-hpj-c126="" routerlink="/" class="button button_blue button_no-shadow" href="/">Return to shop</a></div>
                         </div>
                     </section>
-                    <!---->
-                    <!---->
-                    <!---->
-                    <!---->
                     <div _ngcontent-hpj-c126="" class="py-5 ng-star-inserted"></div>
-                    <!---->
-                    <!---->
                 </div>
+
                 <app-footer _ngcontent-hpj-c126="" _nghost-hpj-c64="">
                     <div _ngcontent-hpj-c64="" class="footer">
                         <div _ngcontent-hpj-c64="" class="footer__wrapper">
@@ -3437,8 +3434,8 @@
                             </div>
                             <div _ngcontent-hpj-c64="" class="footer__social">
                                 <div _ngcontent-hpj-c64="">
-                                    <p _ngcontent-hpj-c64=""><a _ngcontent-hpj-c64="" href="mailto:hello@7daysperformance.co.uk" class="footer__social-email">hello@7daysperformance.co.uk</a></p>
-                                    <p _ngcontent-hpj-c64="" class="footer__annotation--light"> 7days Performance - Technology and Marketing powered by <a _ngcontent-hpj-c64="" href="https://7dayslabs.co.uk/" target="_blank" class="footer__annotation--light"><u _ngcontent-hpj-c64="">7days Labs</u></a></p>
+                                    <p _ngcontent-hpj-c64=""><a _ngcontent-hpj-c64="" href="mailto:hello@myprizer.com" class="footer__social-email">hello@myprizer.com</a></p>
+                                    <p _ngcontent-hpj-c64="" class="footer__annotation--light"> {{ $site_settings->site_name }} - Technology and Marketing powered by <a _ngcontent-hpj-c64="" href="https://7dayslabs.co.uk/" target="_blank" class="footer__annotation--light"><u _ngcontent-hpj-c64="">7days Labs</u></a></p>
                                     <p _ngcontent-hpj-c64="" class="footer__annotation--light">© All rights reserved</p>
                                 </div>
                                 <ul _ngcontent-hpj-c64="">
@@ -3471,4 +3468,217 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+    <script>
+        // on load
+        window.onload = function() {
+            // get cart from local storage
+            let cart = localStorage.getItem('cart');
+            cart = JSON.parse(cart);
+
+            // if cart is empty
+            if (cart == null || cart.length == 0) {
+                // hide cart
+                document.getElementById('cart').style.display = 'none';
+                // show empty cart
+                document.getElementById('empty-cart').style.display = 'block';
+            } else {
+                // show cart
+                document.getElementById('cart').style.display = 'block';
+                // hide empty cart
+                document.getElementById('empty-cart').style.display = 'none';
+            }
+
+            // if cart is not empty
+            if (cart != null && cart.length > 0) {
+                // get cart items
+                let cartTable = document.querySelector('.cart-table');
+                let cartTotal = document.getElementById('cart-total__cell');
+
+                let total = 0;
+
+                // loop through cart items
+                cart.forEach(function(item) {
+                    // <div _ngcontent-bwp-c99="" class="cart-table__row">
+                    //     <div _ngcontent-bwp-c99="" class="cart-table__cell cart-table__cell_image">
+                    //         <a _ngcontent-bwp-c99="" href="/product/win-grey-rsq8-2000cash">
+                    //             <img _ngcontent-bwp-c99="" alt="" class="cart-table__image" src="https://7days-production.s3.eu-west-2.amazonaws.com/sevendays/media/cache/big/https%3A/7days-production.s3.eu-west-2.amazonaws.com/sevendays/upload/media/default/0033/35/892cf29ad2a65cd0168708d095820ff8ff95b9e1.jpg">
+                    //         </a>
+                    //     </div>
+                    //     <div _ngcontent-bwp-c99="" class="cart-table__cell cart-table__cell_name">
+                    //         <a _ngcontent-bwp-c99="" class="cart-table__link" href="/product/win-grey-rsq8-2000cash">Win This Nardo Grey 2022 Audi RSQ8 Vorsprung + £2,000 Cash!</a>
+                    //         <p _ngcontent-bwp-c99="" class="cart-table__answer">
+                    //             <span _ngcontent-bwp-c99="" class="cart-table__text-bold">Answer:</span> Corsa 
+                    //         </p>
+                    //     </div>
+                    //     <div _ngcontent-bwp-c99="" class="cart-table__cell cart-table__cell_quantity">
+                    //         <div _ngcontent-bwp-c99="" class="cart-table__quantity">
+                    //             <button _ngcontent-bwp-c99="" type="button">-</button>
+                    //             <input _ngcontent-bwp-c99="" type="text" formcontrolname="editableQuantity" apponlynumbers="" inputmode="numeric" size="2">
+                    //             <button _ngcontent-bwp-c99="" type="button">+</button>
+                    //         </div>
+                    //     </div>
+                    //     <div _ngcontent-bwp-c99="" class="cart-table__cell cart-table__cell_price">
+                    //         <span _ngcontent-bwp-c99="" class="cart-table__price ng-star-inserted"> £19.80</span>
+                    //     </div>
+                    //     <div _ngcontent-bwp-c99="" class="cart-table__cell cart-table__cell_remove">
+                    //         <button _ngcontent-bwp-c99="" type="button" class="cart-table__remove">×</button>
+                    //     </div>
+                    // </div>
+
+                    // create cart item
+                    let cartItem = document.createElement('div');
+                    cartItem.classList.add('cart-table__row');
+
+                    // create cart item image
+                    let cartItemImageContainer = document.createElement('div');
+                    cartItemImageContainer.classList.add('cart-table__cell');
+                    cartItemImageContainer.classList.add('cart-table__cell_image');
+
+                    // create cart item image link
+                    let cartItemImageLink = document.createElement('a');
+                    cartItemImageLink.setAttribute('href', '/product/' + item.product_slug);
+
+                    // create cart item image
+                    let cartItemImage = document.createElement('img');
+                    cartItemImage.classList.add('cart-table__image');
+                    cartItemImage.setAttribute('src', item.product_image);
+
+                    // append cart item image elements
+                    cartItemImageLink.appendChild(cartItemImage);
+                    cartItemImageContainer.appendChild(cartItemImageLink);
+
+                    // create cart item name container
+                    let cartItemNameContainer = document.createElement('div');
+                    cartItemNameContainer.classList.add('cart-table__cell');
+                    cartItemNameContainer.classList.add('cart-table__cell_name');
+
+                    // create cart item name link
+                    let cartItemNameLink = document.createElement('a');
+                    cartItemNameLink.classList.add('cart-table__link');
+                    cartItemNameLink.setAttribute('href', '/product/' + item.product_slug);
+                    cartItemNameLink.innerHTML = item.product_title;
+
+                    // create cart item answer paragraph
+                    let cartItemAnswer = document.createElement('p');
+                    cartItemAnswer.classList.add('cart-table__answer');
+
+                    // create cart item answer span
+                    let cartItemAnswerText1 = document.createElement('span');
+                    cartItemAnswerText1.classList.add('cart-table__text-bold');
+                    cartItemAnswerText1.innerHTML = 'Answer: ';
+
+                    // create cart item answer text
+                    let cartItemAnswerText2 = document.createElement('span');
+                    cartItemAnswerText2.innerHTML = item.answer ?? 'N/A';
+
+                    // append cart item answer elements
+                    cartItemAnswer.appendChild(cartItemAnswerText1);
+                    cartItemAnswer.appendChild(cartItemAnswerText2);
+
+                    // append cart item name elements
+                    cartItemNameContainer.appendChild(cartItemNameLink);
+                    cartItemNameContainer.appendChild(cartItemAnswer);
+
+                    // create cart item quantity container
+                    let cartItemQuantityContainer = document.createElement('div');
+                    cartItemQuantityContainer.classList.add('cart-table__cell');
+                    cartItemQuantityContainer.classList.add('cart-table__cell_quantity');
+
+                    // create cart item quantity div
+                    let cartItemQuantityDiv = document.createElement('div');
+                    cartItemQuantityDiv.classList.add('cart-table__quantity');
+
+                    // create cart item quantity minus
+                    let cartItemQuantityMinus = document.createElement('button');
+                    cartItemQuantityMinus.setAttribute('type', 'button');
+                    cartItemQuantityMinus.innerHTML = '-';
+
+                    // create cart item quantity input
+                    let cartItemQuantityInput = document.createElement('input');
+                    cartItemQuantityInput.setAttribute('type', 'text');
+                    cartItemQuantityInput.setAttribute('formcontrolname', 'editableQuantity');
+                    cartItemQuantityInput.setAttribute('apponlynumbers', '');
+                    cartItemQuantityInput.setAttribute('inputmode', 'numeric');
+                    cartItemQuantityInput.setAttribute('size', '2');
+                    cartItemQuantityInput.value = item.ticket_total;
+
+                    // create cart item quantity plus
+                    let cartItemQuantityPlus = document.createElement('button');
+                    cartItemQuantityPlus.setAttribute('type', 'button');
+                    cartItemQuantityPlus.innerHTML = '+';
+
+                    // append cart item quantity elements
+                    cartItemQuantityDiv.appendChild(cartItemQuantityMinus);
+                    cartItemQuantityDiv.appendChild(cartItemQuantityInput);
+                    cartItemQuantityDiv.appendChild(cartItemQuantityPlus);
+                    cartItemQuantityContainer.appendChild(cartItemQuantityDiv);
+
+                    // create cart item price container
+                    let cartItemPriceContainer = document.createElement('div');
+                    cartItemPriceContainer.classList.add('cart-table__cell');
+                    cartItemPriceContainer.classList.add('cart-table__cell_price');
+
+                    // create cart item price
+                    let cartItemPrice = document.createElement('span');
+                    cartItemPrice.classList.add('cart-table__price');
+                    cartItemPrice.innerHTML = "{{ $site_settings->site_currency_sym }}" + item.product_total;
+
+                    // append cart item price elements
+                    cartItemPriceContainer.appendChild(cartItemPrice);
+
+                    // create cart item remove container
+                    let cartItemRemoveContainer = document.createElement('div');
+                    cartItemRemoveContainer.classList.add('cart-table__cell');
+                    cartItemRemoveContainer.classList.add('cart-table__cell_remove');
+
+                    // create cart item remove button
+                    let cartItemRemoveButton = document.createElement('button');
+                    cartItemRemoveButton.setAttribute('type', 'button');
+                    cartItemRemoveButton.classList.add('cart-table__remove');
+                    cartItemRemoveButton.innerHTML = '×';
+
+                    // append cart item remove elements
+                    cartItemRemoveContainer.appendChild(cartItemRemoveButton);
+
+                    // append cart item elements
+                    cartItem.appendChild(cartItemImageContainer);
+                    cartItem.appendChild(cartItemNameContainer);
+                    cartItem.appendChild(cartItemQuantityContainer);
+                    cartItem.appendChild(cartItemPriceContainer);
+                    cartItem.appendChild(cartItemRemoveContainer);
+
+                    // append cart
+                    cartTable.appendChild(cartItem);
+
+                    // add event listener to cart item remove button
+                    cartItemRemoveButton.addEventListener('click', function() {
+                        removeItem(item.id);
+                    });
+
+                    // add event listener to cart item quantity minus button
+                    cartItemQuantityMinus.addEventListener('click', function() {
+                        updateItem(item.id, item.quantity - 1);
+                    });
+
+                    // add event listener to cart item quantity plus button
+                    cartItemQuantityPlus.addEventListener('click', function() {
+                        updateItem(item.id, item.quantity + 1);
+                    });
+
+                    // add event listener to cart item quantity input
+                    cartItemQuantityInput.addEventListener('change', function() {
+                        updateItem(item.id, cartItemQuantityInput.value);
+                    });
+
+                    total += item.product_price * item.ticket_total;
+                });
+
+                // update cart total
+                cartTotal.innerHTML = "{{ $site_settings->site_currency_sym }}" + total.toFixed(2);
+            }
+        }
+    </script>
 @endsection

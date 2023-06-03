@@ -77,8 +77,6 @@ class AppController extends Controller
                 $user = new User;
             }
 
-            $user->ticket = rand(111111, 999999);
-
             $user->first_name = $request->first_name;
             $user->last_name = $request->last_name;
             $user->email = $request->email;
@@ -94,6 +92,21 @@ class AppController extends Controller
             $user->dob_year = $request->dob_year;
 
             $user->save();
+
+            $cartData = $request->input('cart');
+
+            if(!empty($cartData)) {
+                $cart = json_decode($cartData, true);
+
+                foreach ($cart as $item) {
+                    $user->tickets()->create([
+                        'prize_id' => $item['product_id'],
+                        'number' => $item['product_id'] . rand(100000, 999999),
+                        'amount' => $item['product_total'],
+                        'quantity' => $item['ticket_total'],
+                    ]);
+                }
+            }
 
             return redirect()->route('app.checkout-2');
         }
